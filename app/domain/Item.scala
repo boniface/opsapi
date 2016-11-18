@@ -19,6 +19,12 @@ case class Item (id:String,
                   elevation:String,
                   relatedLot:String)
 
+case class dictionary (latitude:String,
+                  longitude:String,
+                  elevation:String)
+
+
+
 object Item {
   implicit val itemFmt = Json.format[Item]
 }
