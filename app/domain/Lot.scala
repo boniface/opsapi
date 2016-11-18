@@ -13,7 +13,7 @@ case class Lot (id: String,
                 date:String,
                 minimalStep:Value,
                 auctionPeriod:Period,
-                auctionUrl:url,
+                auctionUrl:String,
                 status:String)
 
 object Lot{
