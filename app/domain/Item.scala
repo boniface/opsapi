@@ -14,9 +14,6 @@ case class Item (id:String,
                   deliveryDate:Period,
                   deliveryAddress:Address,
                   deliveryLocation:dictionary,
-                  latitude:String,
-                  longitude:String,
-                  elevation:String,
                   relatedLot:String)
 
 case class dictionary (latitude:String,
