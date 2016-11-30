@@ -1,4 +1,4 @@
-package domain
+package domain.Unit
 
 import play.api.libs.json.Json
 

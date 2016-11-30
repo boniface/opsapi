@@ -1,5 +1,6 @@
-package domain
+package domain.Lot
 
+import domain.{Guarantee, Period, Value}
 import play.api.libs.json.Json
 
 
@@ -9,11 +10,11 @@ import play.api.libs.json.Json
 case class Lot (id: String,
                 title:String,
                 description:String,
-                value:Value,
-                guarantee:Guarantee,
-                date:String = Date,
-                minimalStep:Value,
-                auctionPeriod:Period,
+                value:String, //Value Id
+                guarantee:String, //Guarantee Id
+                date:String,
+                minimalStep:String, //Value Id
+                auctionPeriod:String, //Period Id
                 auctionUrl:String,
                 status:String)
 

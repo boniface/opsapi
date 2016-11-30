@@ -1,4 +1,4 @@
-package domain
+package domain.Classification
 
 import play.api.libs.json.Json
 

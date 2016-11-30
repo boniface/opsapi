@@ -1,4 +1,4 @@
-package domain
+package domain.Document
 
 import play.api.libs.json.Json
 
@@ -6,13 +6,13 @@ import play.api.libs.json.Json
   * Created by aidenp on 2016/11/18.
   */
 case class Document(id:String,
-                    documentType:String,
+                    documentType:Map[String,(Map[String, String])],
                     title:String,
                     description:String,
                     format:String,
                     url:String,
-                    datePublished:String = Date,
-                    dateModified:String = Date,
+                    datePublished:String,
+                    dateModified:String,
                     language:String,
                     documentOf:String,
                     relatedItem: String)
