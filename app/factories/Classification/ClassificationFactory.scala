@@ -1,6 +1,6 @@
-package factories
+package factories.Classification
 
-import domain.Classification
+import domain.Classification.Classification
 
 /**
   * Created by AidenP on 2016/11/23.
