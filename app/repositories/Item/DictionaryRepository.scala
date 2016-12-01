@@ -1,12 +1,11 @@
 package repositories.Item
 
 import com.datastax.driver.core.Row
-import domain.Item.Dictionary
-import com.datastax.driver.core.Row
 import com.websudos.phantom.CassandraTable
 import com.websudos.phantom.dsl._
-import com.websudos.phantom.keys.PartitionKey
 import com.websudos.phantom.reactivestreams._
+import conf.connection.DataConnection
+import domain.Item.Dictionary
 
 import scala.concurrent.Future
 
@@ -34,25 +33,32 @@ class DictionaryRepository extends CassandraTable[DictionaryRepository, Dictiona
 object DictionaryRepository extends DictionaryRepository with RootConnector {
   override lazy val tableName = "schedule"
 
-  //override implicit def space: KeySpace = DataConnection.keySpace
+  override implicit def space: KeySpace = DataConnection.keySpace
 
- // override implicit def session: Session = DataConnection.session
+  override implicit def session: Session = DataConnection.session
 
-  def save(sched: Dictionary): Future[ResultSet] = {
+  def save(dictionary: Dictionary): Future[ResultSet] = {
     insert
-      .value(_.id, sched.id)
-      .value(_.latitude, sched.latitude)
-      .value(_.longitude, sched.longitude)
-      .value(_.elevation, sched.elevation)
+      .value(_.id, dictionary.id)
+      .value(_.latitude, dictionary.latitude)
+      .value(_.longitude, dictionary.longitude)
+      .value(_.elevation, dictionary.elevation)
       .future()
   }
 
-  def getAllScheduledCourse: Future[Seq[Dictionary]] = {
-    select.fetchEnumerator() run Iteratee.collect()
-  }
-
-  def getScheduledCourseById(id: String): Future[Option[Dictionary]] = {
+  def getDictionaryById(id: String):Future[Option[Dictionary]] = {
     select.where(_.id eqs id).one()
   }
+  def getAllDictionaries: Future[Seq[Dictionary]] = {
+    select.fetchEnumerator() run Iteratee.collect()
+  }
+  def getDictionary(id: String): Future[Seq[Dictionary]] = {
+    select.where(_.id eqs id).fetchEnumerator() run Iteratee.collect()
+  }
+
+  def deleteById(id:String): Future[ResultSet] = {
+    delete.where(_.id eqs id).future()
+  }
+
 }
 
