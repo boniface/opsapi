@@ -6,7 +6,7 @@ import play.api.libs.json.Json
   * Created by aidenp on 2016/11/18.
   */
 case class Document(id:String,
-                    documentType:Map[String,(Map[String, String])],
+                    documentType:Map[String, String],
                     title:String,
                     description:String,
                     format:String,
