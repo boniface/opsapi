@@ -3,7 +3,6 @@ package repositories.Item
 import Item.ItemClassification
 import com.datastax.driver.core.Row
 import com.websudos.phantom.CassandraTable
-import com.websudos.phantom.column.PrimitiveColumn
 import com.websudos.phantom.dsl._
 import com.websudos.phantom.keys.PartitionKey
 import com.websudos.phantom.reactivestreams._
@@ -49,7 +48,7 @@ object ItemClassificationRepository extends ItemClassificationRepository with Ro
   }
 
   def getItemClassification(ItemId: String, ClassificationId: String): Future[Seq[ItemClassification]] = {
-    select.where(_.ItemId eqs ItemId). and(_.ClassificationId eqs ClassificationId) run Iteratee.collect()
+    select.where(_.ItemId eqs ItemId). and(_.ClassificationId eqs ClassificationId).fetchEnumerator() run Iteratee.collect()
   }
 
   def deleteById(ItemId: String, ClassificationId: String): Future[ResultSet] = {
