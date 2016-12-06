@@ -13,11 +13,11 @@ class LotFactory {
                   id = values("id"),
                   title = values("title"),
                   description = values("description"),
-                  value = values("value"),
-                  guarantee = values("guarantee"),
+                  //value = values("value"),
+                  //guarantee = values("guarantee"),
                   date = values("date"),
-                  minimalStep = values("minimalStep"),
-                  auctionPeriod = values("auctionPeriod"),
+                  //minimalStep = values("minimalStep"),
+                  //auctionPeriod = values("auctionPeriod"),
                   auctionUrl = values("auctionUrl"),
                   status = values("status"))
             }
