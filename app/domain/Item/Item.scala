@@ -7,14 +7,14 @@ import play.api.libs.json.Json
   */
 case class Item (id:String,
                   description:String,
-                  classification:String, // classification id
-                  additionalClassifications:String, //additionalClassifications id
+                 // classification:String, // classification id
+                 // additionalClassifications:String, //additionalClassifications id
                   unit:String, //lot id
                   quantity:Int,
-                  deliveryDate:String, //deliveryDate id
-                  deliveryAddress:String, //deliveryAddress id
-                  deliveryLocation:String, //deliveryLocation id
-                  relatedLot:String) //Lot id
+                  //deliveryDate:String, //deliveryDate id
+                 // deliveryAddress:String, //deliveryAddress id
+                  //deliveryLocation:String, //deliveryLocation id
+                 // relatedLot:String) //Lot id
 
 object Item {
   implicit val itemFmt = Json.format[Item]
