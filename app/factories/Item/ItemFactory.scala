@@ -12,14 +12,14 @@ class ItemFactory {
                 { Item(
                   id = values("id"),
                   description = values("description"),
-                  classification = values("description"),
-                  additionalClassifications = values("additionalClassifications"),
+                  //classification = values("description"),
+                  //additionalClassifications = values("additionalClassifications"),
                   unit = values("description"),
-                  quantity = quantity,
-                  deliveryDate = values("deliveryDate"),
+                  quantity = quantity
+                  /*deliveryDate = values("deliveryDate"),
                   deliveryAddress = values("deliveryAddress"),
                   deliveryLocation = values("deliveryLocation"),
-                  relatedLot = values("relatedLot"))
+                  relatedLot = values("relatedLot")*/)
                   }
 
 }
