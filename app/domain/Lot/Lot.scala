@@ -10,11 +10,11 @@ import play.api.libs.json.Json
 case class Lot (id: String,
                 title:String,
                 description:String,
-                value:String, //Value Id
-                guarantee:String, //Guarantee Id
+                //value:String, //Value Id
+                //guarantee:String, //Guarantee Id
                 date:String,
-                minimalStep:String, //Value Id
-                auctionPeriod:String, //Period Id
+                //minimalStep:String, //Value Id
+                //auctionPeriod:String, //Period Id
                 auctionUrl:String,
                 status:String)
 
