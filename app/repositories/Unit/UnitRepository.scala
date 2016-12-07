@@ -22,11 +22,8 @@ class UnitRepository extends CassandraTable[UnitRepository, Unit]{
     Unit(
       code(r),
       name(r)
-
     )
-
   }
-
 }
 
 object UnitRepository extends UnitRepository with RootConnector {
