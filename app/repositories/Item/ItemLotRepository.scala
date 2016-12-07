@@ -15,7 +15,7 @@ import scala.concurrent.Future
   * Created by AidenP on 2016/11/30.
   */
 class ItemLotRepository  extends CassandraTable[ItemLotRepository, ItemLot]{
-  object ItemId extends StringColumn(this) with PrimaryKey[String]
+  object ItemId extends StringColumn(this) with PartitionKey[String]
   object LotId extends  StringColumn(this) with PartitionKey[String]
 
   override def fromRow(r: Row):ItemLot = {
@@ -56,6 +56,4 @@ object ItemLotRepository extends ItemLotRepository with RootConnector {
     delete.where(_.ItemId eqs ItemId). and(_.LotId eqs LotId).future()
   }
 }
-    ItemId:String,
-  LotId:String
 
