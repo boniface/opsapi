@@ -1,6 +1,5 @@
 package domain
 
-import java.util.Date
 
 import play.api.libs.json.Json
 
@@ -9,14 +8,12 @@ import play.api.libs.json.Json
   */
 case class Cancellation (id:String,
                          reason:String,
-                         reason_en:String,
-                         reason_ru:String,
-                         date:Date,
+                         date: String,
                          status:String,
                          documents:List[Document],
                          cancellationOf:String,
                          relatedLot:String)
 
 object Cancellation {
-  implicit val classificationFmt = Json.format[Cancellation]
+  implicit val cancellationFmt = Json.format[Cancellation]
 }
