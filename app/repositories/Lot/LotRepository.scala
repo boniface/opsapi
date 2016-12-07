@@ -30,11 +30,11 @@ class LotRepository extends CassandraTable[LotRepository, Lot]{
       id(r),
       title(r),
       description(r),
-      value(r),
-      guarantee(r),
+      //value(r),
+     // guarantee(r),
       date(r),
-      minimalStep(r),
-      auctionPeriod(r),
+     // minimalStep(r),
+      //auctionPeriod(r),
       auctionUrl(r),
       status(r)
     )
@@ -55,11 +55,11 @@ object LotRepository extends LotRepository with RootConnector {
       .value(_.id, lot.id)
       .value(_.title, lot.title)
       .value(_.description, lot.description)
-      .value(_.value, lot.value)
-      .value(_.guarantee, lot.guarantee)
+      //.value(_.value, lot.value)
+      //.value(_.guarantee, lot.guarantee)
       .value(_.date, lot.date)
-      .value(_.minimalStep, lot.minimalStep)
-      .value(_.auctionPeriod, lot.auctionPeriod)
+      //.value(_.minimalStep, lot.minimalStep)
+     // .value(_.auctionPeriod, lot.auctionPeriod)
       .value(_.auctionUrl, lot.auctionUrl)
       .value(_.status, lot.status)
       .future()
