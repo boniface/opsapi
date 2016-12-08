@@ -2,7 +2,6 @@ package repositories.Item
 
 import com.datastax.driver.core.Row
 import com.websudos.phantom.CassandraTable
-import com.websudos.phantom.column.PrimitiveColumn
 import com.websudos.phantom.dsl._
 import com.websudos.phantom.keys.PartitionKey
 import com.websudos.phantom.reactivestreams._
@@ -16,7 +15,7 @@ import scala.concurrent.Future
   */
 class ItemAddressRepository extends CassandraTable[ItemAddressRepository, ItemAddress]{
   object ItemId extends StringColumn(this) with PartitionKey[String]
-  object AddressId extends  StringColumn(this)
+  object AddressId extends  StringColumn(this) with PartitionKey[String]
 
   override def fromRow(r: Row):ItemAddress = {
     ItemAddress(
@@ -47,7 +46,7 @@ object ItemAddressRepository extends ItemAddressRepository with RootConnector {
     select.where(_.ItemId eqs ItemId).one()
   }
 
-  def getAllItemAddresss: Future[Seq[ItemAddress]] = {
+  def getAllItemAddresses: Future[Seq[ItemAddress]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 

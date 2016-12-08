@@ -14,7 +14,7 @@ import scala.concurrent.Future
   * Created by AidenP on 2016/11/30.
   */
 class ItemClassificationRepository extends CassandraTable[ItemClassificationRepository, ItemClassification]{
-  object ItemId extends StringColumn(this) with PrimaryKey[String]
+  object ItemId extends StringColumn(this) with PartitionKey[String]
   object ClassificationId extends  StringColumn(this) with PartitionKey[String]
 
   override def fromRow(r: Row):ItemClassification = {

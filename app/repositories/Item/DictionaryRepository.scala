@@ -13,7 +13,7 @@ import scala.concurrent.Future
   * Created by AidenP on 2016/11/30.
   */
 class DictionaryRepository extends CassandraTable[DictionaryRepository, Dictionary]{
-  object id  extends StringColumn(this) with PrimaryKey[String] with ClusteringOrder[String] with Descending
+  object id  extends StringColumn(this) with PrimaryKey[String]
   object latitude extends StringColumn(this)
   object longitude extends StringColumn(this)
   object elevation extends StringColumn(this)
