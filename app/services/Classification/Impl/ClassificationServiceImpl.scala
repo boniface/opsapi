@@ -16,11 +16,15 @@ class ClassificationServiceImpl extends ClassificationService with Service{
     ClassificationRepository.save(classification)
   }
 
-  def getCompetencyById( id: String): Future[Option[Classification]] = {
-    ClassificationRepository.getClassificationById( id)
+  def getClassificationById(id: String): Future[Option[Classification]] = {
+    ClassificationRepository.getClassificationById(id)
   }
 
-  def getCompetencys(): Future[Seq[Classification]] = {
+  def getAllClassifications(): Future[Seq[Classification]] = {
     ClassificationRepository.getAllClassifications
+  }
+
+  def deleteById(id: String): Future[ResultSet] = {
+    ClassificationRepository.deleteById(id)
   }
 }
