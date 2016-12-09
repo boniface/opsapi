@@ -42,19 +42,19 @@ object ItemAddressRepository extends ItemAddressRepository with RootConnector {
       .future()
   }
 
-  def getItemAddressById(ItemId: String): Future[Option[ItemAddress]] = {
-    select.where(_.ItemId eqs ItemId).one()
+  def getItemAddressById(ItemId: String,  AddressId: String): Future[Option[ItemAddress]] = {
+    select.where(_.ItemId eqs ItemId). and(_.AddressId eqs AddressId).one()
   }
 
   def getAllItemAddresses: Future[Seq[ItemAddress]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 
-  def getItemAddress(ItemId: String): Future[Seq[ItemAddress]] = {
-    select.where(_.ItemId eqs ItemId).fetchEnumerator() run Iteratee.collect()
+  def getItemAddress(ItemId: String, AddressId: String): Future[Seq[ItemAddress]] = {
+    select.where(_.ItemId eqs ItemId). and(_.AddressId eqs AddressId).fetchEnumerator() run Iteratee.collect()
   }
 
-  def deleteById(ItemId: String): Future[ResultSet] = {
-    delete.where(_.ItemId eqs ItemId).future()
+  def deleteById(ItemId: String,  AddressId: String): Future[ResultSet] = {
+    delete.where(_.ItemId eqs ItemId). and(_.AddressId eqs AddressId).future()
   }
 }
