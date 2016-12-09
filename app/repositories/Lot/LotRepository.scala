@@ -69,7 +69,7 @@ object LotRepository extends LotRepository with RootConnector {
     select.where(_.id eqs id).one()
   }
 
-  def getAllDictionaries: Future[Seq[Lot]] = {
+  def getAllLots: Future[Seq[Lot]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 
