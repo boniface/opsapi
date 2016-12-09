@@ -40,15 +40,15 @@ object ItemDictionaryRepository extends ItemDictionaryRepository with RootConnec
       .future()
   }
 
-  def getItemClassificationById(ItemId: String, DictionaryId: String): Future[Option[ItemDictionary]] = {
+  def getItemDictionaryById(ItemId: String, DictionaryId: String): Future[Option[ItemDictionary]] = {
     select.where(_.ItemId eqs ItemId). and(_.DictionaryId eqs DictionaryId).one()
   }
 
-  def getAllItemClassifications: Future[Seq[ItemDictionary]] = {
+  def getAllItemDictionaries: Future[Seq[ItemDictionary]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 
-  def getItemClassification(ItemId: String, DictionaryId: String): Future[Seq[ItemDictionary]] = {
+  def getItemDictionary(ItemId: String, DictionaryId: String): Future[Seq[ItemDictionary]] = {
     select.where(_.ItemId eqs ItemId). and(_.DictionaryId eqs DictionaryId).fetchEnumerator() run Iteratee.collect()
   }
 
