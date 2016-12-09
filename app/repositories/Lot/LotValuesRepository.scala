@@ -6,48 +6,48 @@ import com.websudos.phantom.column.PrimitiveColumn
 import com.websudos.phantom.dsl._
 import com.websudos.phantom.reactivestreams._
 import conf.connection.DataConnection
-import domain.Lot.LotValue
+import domain.Lot.LotValues
 
 import scala.concurrent.Future
 
 /**
   * Created by AidenP on 2016/12/07.
   */
-class LotValueRepository extends CassandraTable[LotValueRepository,  LotValue]{
+class LotValuesRepository extends CassandraTable[LotValuesRepository,  LotValues]{
   object  LotId extends StringColumn(this) with PartitionKey[String]
   object ValueId extends  StringColumn(this) with PartitionKey[String]
 
-  override def fromRow(r: Row): LotValue = {
-     LotValue(
+  override def fromRow(r: Row): LotValues = {
+     LotValues(
       LotId(r),
       ValueId(r))
   }
 
 }
 
-object LotValueRepository extends LotValueRepository with RootConnector {
+object LotValuesRepository extends LotValuesRepository with RootConnector {
   override lazy val tableName = "schedule"
 
   override implicit def space: KeySpace = DataConnection.keySpace
 
   override implicit def session: Session = DataConnection.session
 
-  def save(lotValue:  LotValue): Future[ResultSet] = {
+  def save(lotValues:  LotValues): Future[ResultSet] = {
     insert
-      .value(_.LotId,lotValue.LotId)
-      .value(_.ValueId,lotValue.ValueId)
+      .value(_.LotId,lotValues.LotId)
+      .value(_.ValueId,lotValues.ValueId)
       .future()
   }
 
-  def getLotMinimalStepById( LotId: String, ValueId: String): Future[Option[ LotValue]] = {
+  def getLotValuesById( LotId: String, ValueId: String): Future[Option[ LotValues]] = {
     select.where(_.LotId eqs  LotId). and(_.ValueId eqs ValueId).one()
   }
 
-  def getAllLotMinimalSteps: Future[Seq[ LotValue]] = {
+  def getAllLotValuess: Future[Seq[ LotValues]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 
-  def getLotMinimalStep( LotId: String, ValueId: String): Future[Seq[ LotValue]] = {
+  def getLotValues( LotId: String, ValueId: String): Future[Seq[ LotValues]] = {
     select.where(_.LotId eqs  LotId). and(_.ValueId eqs ValueId).fetchEnumerator() run Iteratee.collect()
   }
 
