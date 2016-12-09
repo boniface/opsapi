@@ -7,7 +7,7 @@ import play.api.libs.json.Json
   */
 case class Organization(name: String,
                         identifier: String,
-                        additionalIdentifiers: Map[String, String],
+                        additionalIdentifiers: String,
                         address: String,//address id
                         contactPoint: String)//contactPoint id
 

@@ -10,11 +10,11 @@ class OrganizationFactory {
   def createLot(values: Map[String,String],additionalIdentifiers:Map[String,String]
                ):Organization={
     Organization(
-      name = values("scheme"),
-      identifier = values("id"),
-      additionalIdentifiers = additionalIdentifiers,
-      address = values("uri"),
-      contactPoint = values("uri"))
+      name = values("name"),
+      identifier = values("identifier"),
+      additionalIdentifiers = values("additionalIdentifiers") ,
+      address = values("address"),
+      contactPoint = values("contactPoint"))
 
   }
 
