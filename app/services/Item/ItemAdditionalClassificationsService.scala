@@ -11,11 +11,11 @@ import services.Item.Impl.ItemAdditionalClassificationsServiceImpl
 trait ItemAdditionalClassificationsService {
   def createOrUpdate(itemAdditionalClassifications: ItemAdditionalClassifications): Future[ResultSet]
 
-  def getItemAdditionalClassificationsById(id: String): Future[Option[ItemAdditionalClassifications]]
+  def getItemAdditionalClassificationsById(itemId: String, ClassificationId: String): Future[Option[ItemAdditionalClassifications]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(itemId: String, ClassificationId: String): Future[ResultSet]
 
-  def getAllItemAdditionalClassificationss(): Future[Seq[ItemAdditionalClassifications]]
+  def getAllItemAdditionalClassifications(): Future[Seq[ItemAdditionalClassifications]]
 
 }
 object ItemAdditionalClassificationsService{

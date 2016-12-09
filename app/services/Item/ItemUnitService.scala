@@ -11,9 +11,9 @@ import services.Item.Impl.ItemUnitServiceImpl
 trait ItemUnitService {
   def createOrUpdate(itemUnit: ItemUnit): Future[ResultSet]
 
-  def getItemUnitById(id: String): Future[Option[ItemUnit]]
+  def getItemUnitById(itemId: String, unit: String): Future[Option[ItemUnit]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(itemId: String, unit: String): Future[ResultSet]
 
   def getAllItemUnits(): Future[Seq[ItemUnit]]
 

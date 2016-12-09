@@ -15,7 +15,7 @@ trait DictionaryService {
 
   def deleteById(id: String): Future[ResultSet]
 
-  def getAllDictionarys(): Future[Seq[Dictionary]]
+  def getAllDictionaries(): Future[Seq[Dictionary]]
 
 }
 object  DictionaryService{

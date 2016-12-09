@@ -11,9 +11,9 @@ import services.Item.Impl.ItemAddressServiceImpl
 trait ItemAddressService {
   def createOrUpdate(itemAddress: ItemAddress): Future[ResultSet]
 
-  def getItemAddressById(id: String): Future[Option[ItemAddress]]
+  def getItemAddressById(itemId: String, addressId: String): Future[Option[ItemAddress]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(itemId: String, addressId: String): Future[ResultSet]
 
   def getAllItemAddresses(): Future[Seq[ItemAddress]]
 

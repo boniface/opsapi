@@ -11,9 +11,9 @@ import services.Lot.Impl.LotPeriodServiceImpl
 trait LotPeriodService {
   def createOrUpdate(lotPeriod: LotPeriod): Future[ResultSet]
 
-  def getLotPeriodById(id: String): Future[Option[LotPeriod]]
+  def getLotPeriodById(lotId: String, periodId: String): Future[Option[LotPeriod]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(lotId: String, periodId: String): Future[ResultSet]
 
   def getAllLotPeriods(): Future[Seq[LotPeriod]]
 

@@ -11,9 +11,9 @@ import services.Item.Impl.ItemLotServiceImpl
 trait ItemLotService {
   def createOrUpdate(itemLot: ItemLot): Future[ResultSet]
 
-  def getItemLotById(id: String): Future[Option[ItemLot]]
+  def getItemLotById(itemId: String, lot: String): Future[Option[ItemLot]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(itemId: String, lot: String): Future[ResultSet]
 
   def getAllItemLots(): Future[Seq[ItemLot]]
 

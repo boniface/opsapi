@@ -11,9 +11,9 @@ import services.Item.Impl.ItemClassificationServiceImpl
 trait ItemClassificationService {
   def createOrUpdate(itemClassification: ItemClassification): Future[ResultSet]
 
-  def getItemClassificationById(id: String): Future[Option[ItemClassification]]
+  def getItemClassificationById(ItemId: String, Classification: String): Future[Option[ItemClassification]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(ItemId: String, Classification: String): Future[ResultSet]
 
   def getAllItemClassifications(): Future[Seq[ItemClassification]]
 

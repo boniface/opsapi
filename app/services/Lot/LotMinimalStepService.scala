@@ -11,9 +11,9 @@ import services.Lot.Impl.LotMinimalStepServiceImpl
 trait LotMinimalStepService {
   def createOrUpdate(lotMinimalStep: LotMinimalStep): Future[ResultSet]
 
-  def getLotMinimalStepById(id: String): Future[Option[LotMinimalStep]]
+  def getLotMinimalStepById(lotId: String, valueId: String): Future[Option[LotMinimalStep]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(lotId: String, valueId: String): Future[ResultSet]
 
   def getAllLotMinimalSteps(): Future[Seq[LotMinimalStep]]
 

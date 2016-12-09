@@ -11,9 +11,9 @@ import services.Item.Impl.ItemPeriodServiceImpl
 trait ItemPeriodService {
   def createOrUpdate(itemPeriod: ItemPeriod): Future[ResultSet]
 
-  def getItemPeriodById(id: String): Future[Option[ItemPeriod]]
+  def getItemPeriodById(ItemId: String, PeriodId: String): Future[Option[ItemPeriod]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(ItemId: String, PeriodId: String): Future[ResultSet]
 
   def getAllItemPeriods(): Future[Seq[ItemPeriod]]
 

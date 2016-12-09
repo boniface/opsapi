@@ -11,11 +11,11 @@ import services.Item.Impl.ItemDictionaryServiceImpl
 trait ItemDictionaryService {
   def createOrUpdate(itemDictionary: ItemDictionary): Future[ResultSet]
 
-  def getItemDictionaryById(id: String): Future[Option[ItemDictionary]]
+  def getItemDictionaryById(itemId: String,Dictionary: String): Future[Option[ItemDictionary]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(itemId: String,Dictionary: String): Future[ResultSet]
 
-  def getAllItemDictionarys(): Future[Seq[ItemDictionary]]
+  def getAllItemDictionaries(): Future[Seq[ItemDictionary]]
 
 }
 object ItemDictionaryService{

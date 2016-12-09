@@ -11,9 +11,9 @@ import services.Lot.Impl.LotValuesServiceImpl
 trait LotValuesService {
   def createOrUpdate(lotValues: LotValues): Future[ResultSet]
 
-  def getLotValuesById(id: String): Future[Option[LotValues]]
+  def getLotValuesById(lotId: String, valueId: String): Future[Option[LotValues]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(lotId: String, valueId: String): Future[ResultSet]
 
   def getAllLotValuess(): Future[Seq[LotValues]]
 

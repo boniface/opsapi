@@ -11,9 +11,9 @@ import services.Lot.Impl.LotGuaranteeServiceImpl
 trait LotGuaranteeService {
   def createOrUpdate(lotGuarantee: LotGuarantee): Future[ResultSet]
 
-  def getLotGuaranteeById(id: String): Future[Option[LotGuarantee]]
+  def getLotGuaranteeById(lotId: String, guaranteeId: String): Future[Option[LotGuarantee]]
 
-  def deleteById(id: String): Future[ResultSet]
+  def deleteById(lotId: String, guaranteeId: String): Future[ResultSet]
 
   def getAllLotGuarantees(): Future[Seq[LotGuarantee]]
 
