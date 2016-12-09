@@ -1,22 +1,17 @@
-package repositories
-
-
-
+package repositories.Address
 
 import com.datastax.driver.core.Row
 import com.websudos.phantom.CassandraTable
 import com.websudos.phantom.dsl._
 import com.websudos.phantom.keys.PartitionKey
 import com.websudos.phantom.reactivestreams._
-import domain.Address
 import conf.connection.DataConnection
-
+import domain.Address
 
 import scala.concurrent.Future
 /**
   * Created by 212026992 on 12/4/2016.
   */
-class AddressRepository {
 
   class AddressRepository extends CassandraTable[AddressRepository, Address]{
 
@@ -67,6 +62,6 @@ class AddressRepository {
     def deleteById(id:String): Future[ResultSet] = {
       delete.where(_.streetAddress eqs id).future()
     }
-  }
+
 
 }
