@@ -40,15 +40,15 @@ object ItemLotRepository extends ItemLotRepository with RootConnector {
       .future()
   }
 
-  def getItemClassificationById(ItemId: String, LotId: String): Future[Option[ItemLot]] = {
+  def getItemLotById(ItemId: String, LotId: String): Future[Option[ItemLot]] = {
     select.where(_.ItemId eqs ItemId). and(_.LotId eqs LotId).one()
   }
 
-  def getAllItemClassifications: Future[Seq[ItemLot]] = {
+  def getAllItemLots: Future[Seq[ItemLot]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 
-  def getItemClassification(ItemId: String, LotId: String): Future[Seq[ItemLot]] = {
+  def getItemLot(ItemId: String, LotId: String): Future[Seq[ItemLot]] = {
     select.where(_.ItemId eqs ItemId). and(_.LotId eqs LotId).fetchEnumerator() run Iteratee.collect()
   }
 
