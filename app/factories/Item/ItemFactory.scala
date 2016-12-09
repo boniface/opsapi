@@ -14,7 +14,7 @@ class ItemFactory {
                   description = values("description"),
                   //classification = values("description"),
                   //additionalClassifications = values("additionalClassifications"),
-                  unit = values("description"),
+                 // unit = values("description"),
                   quantity = quantity
                   /*deliveryDate = values("deliveryDate"),
                   deliveryAddress = values("deliveryAddress"),
