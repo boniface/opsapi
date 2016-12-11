@@ -7,7 +7,7 @@ import domain.{Cancellation, Document}
   */
 class CancellationFactory {
   def createCancellation(values:Map[String, String],document :List[Document]):Cancellation={
-    Cancellation(id = values("id"),
+    Cancellation(cancellationId = values("cancellationId"),
       reason = values("reason"),
       date = values("String"),
       status = values("status"),

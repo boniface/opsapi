@@ -8,7 +8,8 @@ import domain.{Address, ContactPoint, Identifier, ProcuringEntity}
 class ProcuringEntityFactory {
 
   def createProcuringEntity(values:Map[String, String], contactPoint: ContactPoint, address: Address, identifier: Identifier, additionalIdentifiers:List[Identifier]):ProcuringEntity={
-    ProcuringEntity(name = values("name"),
+    ProcuringEntity(procuringEntityId = values("procuringEntityId"),
+      name = values("name"),
       identifier = identifier,
       additionalIdentifiers = additionalIdentifiers,
       address = address,

@@ -8,7 +8,8 @@ import domain.{Feature, FeatureValue}
 class FeatureFactory {
 
   def createFeature(values:Map[String, String],featureValue :List[FeatureValue]):Feature={
-    Feature(code = values("code"),
+    Feature(featureId = values("featureId"),
+      code = values("code"),
       featureOf = values("featureOf"),
       relatedItem = values("relatedItem"),
       title = values("title"),

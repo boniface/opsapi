@@ -8,7 +8,8 @@ import domain.Revision
 class RevisionFactory {
 
   def createRevision(values:Map[String, String],changes: List[Object]):Revision={
-    Revision(date = values("date"),
+    Revision(revisionId = values("revisionId"),
+      date = values("date"),
       changes = changes)
   }
 
