@@ -2,8 +2,9 @@ package services.Item
 
 import com.websudos.phantom.dsl._
 import domain.Item.Dictionary
-import io.netty.util.concurrent.Future
 import services.Item.Impl.DictionaryServiceImpl
+
+import scala.concurrent.Future
 
 /**
   * Created by AidenP on 2016/12/07.

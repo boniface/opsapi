@@ -2,8 +2,9 @@ package services.Lot
 
 import com.websudos.phantom.dsl._
 import domain.Lot.LotMinimalStep
-import io.netty.util.concurrent.Future
 import services.Lot.Impl.LotMinimalStepServiceImpl
+
+import scala.concurrent.Future
 
 /**
   * Created by AidenP on 2016/12/07.

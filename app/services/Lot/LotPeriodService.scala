@@ -2,8 +2,9 @@ package services.Lot
 
 import com.websudos.phantom.dsl._
 import domain.Lot.LotPeriod
-import io.netty.util.concurrent.Future
 import services.Lot.Impl.LotPeriodServiceImpl
+
+import scala.concurrent.Future
 
 /**
   * Created by AidenP on 2016/12/07.

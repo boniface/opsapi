@@ -2,8 +2,9 @@ package services.Item
 
 import Item.ItemClassification
 import com.websudos.phantom.dsl._
-import io.netty.util.concurrent.Future
 import services.Item.Impl.ItemClassificationServiceImpl
+
+import scala.concurrent.Future
 
 /**
   * Created by AidenP on 2016/12/07.

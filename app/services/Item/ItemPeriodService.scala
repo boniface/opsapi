@@ -2,8 +2,9 @@ package services.Item
 
 import com.websudos.phantom.dsl._
 import domain.Item.ItemPeriod
-import io.netty.util.concurrent.Future
 import services.Item.Impl.ItemPeriodServiceImpl
+
+import scala.concurrent.Future
 
 /**
   * Created by AidenP on 2016/12/07.

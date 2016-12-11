@@ -2,8 +2,9 @@ package services.Classification
 
 import com.websudos.phantom.dsl._
 import domain.Classification.Classification
-import io.netty.util.concurrent.Future
 import services.Classification.Impl.ClassificationServiceImpl
+
+import scala.concurrent.Future
 
 /**
   * Created by AidenP on 2016/12/07.
