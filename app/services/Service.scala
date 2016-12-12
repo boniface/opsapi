@@ -3,7 +3,7 @@ package services
 import conf.DataConnection
 
 /**
-  * Created by travis on 2016/12/11.
+  * Created by Mzuvukile Lawana on 2016/12/11.
   */
 trait Service {
 
