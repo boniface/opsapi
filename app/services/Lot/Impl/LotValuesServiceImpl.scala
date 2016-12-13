@@ -20,7 +20,7 @@ class LotValuesServiceImpl extends  LotValuesService with Service{
      LotValuesRepository.getLotValuesById(lotId, valueId)
   }
 
-  def getAllLotValuess(): Future[Seq[ LotValues]] = {
+  def getAllLotValues(): Future[Seq[ LotValues]] = {
      LotValuesRepository.getAllLotValuess
   }
 

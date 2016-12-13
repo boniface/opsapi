@@ -16,7 +16,7 @@ trait LotValuesService {
 
   def deleteById(lotId: String, valueId: String): Future[ResultSet]
 
-  def getAllLotValuess(): Future[Seq[LotValues]]
+  def getAllLotValues(): Future[Seq[LotValues]]
 
 }
 object LotValuesService{
