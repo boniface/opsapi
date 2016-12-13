@@ -15,7 +15,7 @@ class ClassificationController extends Controller{
   def createOrUpdate = Action.async(parse.json) {
     request =>
       val input = request.body
-      println(" THE INPUT IS ", input)
+      //println(" THE INPUT IS ", input)
       val entity = Json.fromJson[Classification](input).get
       val response = for {
         results <- ClassificationService.apply.createOrUpdate(entity)
@@ -24,6 +24,33 @@ class ClassificationController extends Controller{
         .recover {
           case e: Exception => InternalServerError
         }
+  }
+
+  def getClassification (classificationId: String) = Action.async {
+    request =>
+      val response = for {
+        results <- ClassificationService.apply.getClassificationById(classificationId)
+      } yield results
+      response.map(ans => Ok(Json.toJson(ans)))
+        .recover { case e: Exception => InternalServerError }
+  }
+
+  def getAllClassification () = Action.async {
+    request =>
+      val response = for {
+        results <- ClassificationService.apply.getAllClassifications()
+      } yield results
+      response.map(ans => Ok(Json.toJson(ans)))
+        .recover { case e: Exception => InternalServerError }
+  }
+
+  def deleteClassification (classificationId: String) = Action.async {
+    request =>
+      val response = for {
+        results <- ClassificationService.apply.deleteById(classificationId)
+      } yield results
+      response.map(ans => Ok(Json.toJson(ans)))
+        .recover { case e: Exception => InternalServerError }
   }
 
 }
