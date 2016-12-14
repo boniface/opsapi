@@ -1,9 +1,12 @@
 package repositories.item
 
 import conf.connection.DataConnection
+import domain.Item.ItemPeriod
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import repositories.Item.ItemPeriodRepository
+import services.Item.ItemPeriodService
 
+import scala.concurrent.Await
 import scala.concurrent.duration._
 
 /**
@@ -18,7 +21,21 @@ class ItemPeriodRepositoryTest extends FunSuite with BeforeAndAfterEach{
     ItemPeriodRepository.create.ifNotExists().future()
   }
 
+  test("testSaveOrUpdate") {
+    val itemPeriod = ItemPeriod(
+      "15",
+      "22")
 
+    val result = Await.result(ItemPeriodService.apply.createOrUpdate(itemPeriod), 2.minutes)
+    assert(result.isExhausted)
+  }
+
+
+
+  test("testGetItemPeriod") {
+    val result = Await.result(ItemPeriodService.apply.getItemPeriodById("15","22"), 2.minutes)
+    assert( result.head.PeriodId === "22")
+  }
 
   override protected def afterEach(): Unit = {
     //Delete All records

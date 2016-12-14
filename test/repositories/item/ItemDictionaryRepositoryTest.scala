@@ -1,8 +1,12 @@
 package repositories.item
 
+import Item.ItemDictionary
 import conf.connection.DataConnection
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
+import repositories.Item.ItemDictionaryRepository
+import services.Item.ItemDictionaryService
 
+import scala.concurrent.Await
 import scala.concurrent.duration._
 
 /**
@@ -14,13 +18,27 @@ class ItemDictionaryRepositoryTest extends FunSuite with BeforeAndAfterEach{
 
   override protected def beforeEach(): Unit = {
     //Create Table
-    ClassificationRepository.create.ifNotExists().future()
+     ItemDictionaryRepository.create.ifNotExists().future()
+  }
+
+  test("testSaveOrUpdate") {
+    val itemDictionary =  ItemDictionary(
+      "5",
+      "4")
+
+    val result = Await.result(ItemDictionaryService.apply.createOrUpdate(itemDictionary), 2.minutes)
+    assert(result.isExhausted)
   }
 
 
 
+  test("testGet ItemDictionary") {
+    val result = Await.result( ItemDictionaryService.apply.getItemDictionaryById("5","4"), 2.minutes)
+    assert( result.head.DictionaryId === "4")
+  }
+
   override protected def afterEach(): Unit = {
     //Delete All records
-    ClassificationRepository.truncate().future()
+     ItemDictionaryRepository.truncate().future()
   }
 }

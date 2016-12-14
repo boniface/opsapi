@@ -1,9 +1,12 @@
 package repositories.item
 
+import Item.ItemClassification
 import conf.connection.DataConnection
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import repositories.Item.ItemClassificationRepository
+import services.Item.ItemClassificationService
 
+import scala.concurrent.Await
 import scala.concurrent.duration._
 
 /**
@@ -18,7 +21,21 @@ class ItemClassificationRepositoryTest extends FunSuite with BeforeAndAfterEach{
     ItemClassificationRepository.create.ifNotExists().future()
   }
 
+  test("testSaveOrUpdate") {
+    val itemClassification = ItemClassification(
+      "4",
+      "3")
 
+    val result = Await.result(ItemClassificationService.apply.createOrUpdate(itemClassification), 2.minutes)
+    assert(result.isExhausted)
+  }
+
+
+
+  test("testGetItemClassification") {
+    val result = Await.result(ItemClassificationService.apply.getItemClassificationById("4","3"), 2.minutes)
+    assert( result.head.ClassificationId === "3")
+  }
 
   override protected def afterEach(): Unit = {
     //Delete All records
