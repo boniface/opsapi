@@ -10,7 +10,7 @@ case class Item (id:String,
                  // classification:String, // classification id
                  // additionalClassifications:String, //additionalClassifications id
                  // unit:String, //lot id
-                  quantity:Int,
+                  quantity:Int)
                   //deliveryDate:String, //deliveryDate id
                  // deliveryAddress:String, //deliveryAddress id
                   //deliveryLocation:String, //deliveryLocation id
