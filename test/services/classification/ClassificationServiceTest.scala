@@ -24,7 +24,7 @@ class ClassificationServiceTest extends FunSuite {
   }
 
   test("testGetClassification") {
-    val result = Await.result(ClassificationService.apply.getClassificationById("CLASSIFICATIONID"), 2.minutes)
+    val result = Await.result(ClassificationService.apply.getClassificationById("1"), 2.minutes)
     assert( result.head.scheme === "test")
   }
 
