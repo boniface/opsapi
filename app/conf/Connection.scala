@@ -10,7 +10,7 @@ import com.websudos.phantom.dsl.Session
 import scala.collection.JavaConversions._
 
 /**
-  * Created by hashcode on 2015/10/29.
+  * Created by Mzuvukile Lawana.
   */
 
 object Config {

@@ -3,7 +3,7 @@ package repositories
 import org.scalatest.{FeatureSpec, GivenWhenThen}
 
 /**
-  * Created by travis on 2016/12/12.
+  * Created by Mzuvukile Lawana on 2016/12/12.
   */
 class CancellationRepositoryTest extends FeatureSpec with GivenWhenThen {
 
