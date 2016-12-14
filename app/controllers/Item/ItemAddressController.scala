@@ -25,7 +25,7 @@ class ItemAddressController extends Controller{
         }
   }
 
-  def getItem (itemId: String,addressId: String) = Action.async {
+  def getItemAddress (itemId: String,addressId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemAddressService.apply.getItemAddressById(itemId,addressId)
@@ -34,7 +34,7 @@ class ItemAddressController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem () = Action.async {
+  def getAllItemAddress () = Action.async {
     request =>
       val response = for {
         results <-ItemAddressService.apply.getAllItemAddresses()
@@ -43,7 +43,7 @@ class ItemAddressController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem (itemId: String,addressId: String) = Action.async {
+  def deleteItemAddress (itemId: String,addressId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemAddressService.apply.deleteById(itemId, addressId)

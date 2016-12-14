@@ -15,13 +15,13 @@ class ItemAdditionalClassificationsRouter @Inject()
   override def routes: Routes = {
     case POST(p"/itemAdditionalClassifications/create") =>
       itemAdditionalClassifications.createOrUpdate()
-    case GET(p"/itemAdditionalClassifications/$org,$org1") =>
-      itemAdditionalClassifications.getItem(org,org1)
+    case GET(p"/itemAdditionalClassifications/$org/$org1") =>
+      itemAdditionalClassifications.getItemAdditionalClassification(org,org1)
     case GET(p"/itemAdditionalClassifications/all") =>
-      itemAdditionalClassifications.getAllItem()
-    case PUT(p"/itemAdditionalClassifications/$org") =>
+      itemAdditionalClassifications.getAllItemAdditionalClassifications()
+    case PUT(p"/itemAdditionalClassifications/$org/$org1") =>
       itemAdditionalClassifications.createOrUpdate()
-    case DELETE(p"/itemAdditionalClassifications/$org") =>
-      itemAdditionalClassifications.deleteItemAdditionalClassifications(org)
+    case DELETE(p"/itemAdditionalClassifications/$org,$org1") =>
+      itemAdditionalClassifications.deleteItemAdditionalClassification(org,org1)
   }
 }

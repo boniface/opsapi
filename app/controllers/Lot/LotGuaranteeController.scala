@@ -25,7 +25,7 @@ class LotGuaranteeController extends Controller{
         }
   }
 
-  def getItem (lotId: String,guaranteeId: String) = Action.async {
+  def getLotGuarantee (lotId: String,guaranteeId: String) = Action.async {
     request =>
       val response = for {
         results <-LotGuaranteeService.apply.getLotGuaranteeById(lotId,guaranteeId)
@@ -34,7 +34,7 @@ class LotGuaranteeController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem () = Action.async {
+  def getAllLotGuarantee () = Action.async {
     request =>
       val response = for {
         results <-LotGuaranteeService.apply.getAllLotGuarantees()
@@ -43,7 +43,7 @@ class LotGuaranteeController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem (lotId: String,guaranteeId: String) = Action.async {
+  def deleteLotGuarantee (lotId: String,guaranteeId: String) = Action.async {
     request =>
       val response = for {
         results <-LotGuaranteeService.apply.deleteById(lotId, guaranteeId)

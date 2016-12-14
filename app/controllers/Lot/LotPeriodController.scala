@@ -25,7 +25,7 @@ class LotPeriodController extends Controller {
         }
   }
 
-  def getItem(lotId: String, periodId: String) = Action.async {
+  def getLotPeriod(lotId: String, periodId: String) = Action.async {
     request =>
       val response = for {
         results <- LotPeriodService.apply.getLotPeriodById(lotId, periodId)
@@ -34,7 +34,7 @@ class LotPeriodController extends Controller {
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem() = Action.async {
+  def getAllLotPeriod() = Action.async {
     request =>
       val response = for {
         results <- LotPeriodService.apply.getAllLotPeriods()
@@ -43,7 +43,7 @@ class LotPeriodController extends Controller {
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem(lotId: String, periodId: String) = Action.async {
+  def deleteLotPeriod(lotId: String, periodId: String) = Action.async {
     request =>
       val response = for {
         results <- LotPeriodService.apply.deleteById(lotId, periodId)

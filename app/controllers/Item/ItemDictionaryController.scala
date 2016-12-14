@@ -24,7 +24,7 @@ class ItemDictionaryController extends Controller{
         }
   }
 
-  def getItem (itemId: String,dictionaryId: String) = Action.async {
+  def getItemDictionary (itemId: String,dictionaryId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemDictionaryService.apply.getItemDictionaryById(itemId,dictionaryId)
@@ -33,7 +33,7 @@ class ItemDictionaryController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem () = Action.async {
+  def getAllItemDictionary () = Action.async {
     request =>
       val response = for {
         results <-ItemDictionaryService.apply.getAllItemDictionaries()
@@ -42,7 +42,7 @@ class ItemDictionaryController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem (itemId: String,dictionaryId: String) = Action.async {
+  def deleteItemDictionary (itemId: String,dictionaryId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemDictionaryService.apply.deleteById(itemId, dictionaryId)

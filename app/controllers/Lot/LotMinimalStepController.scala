@@ -25,7 +25,7 @@ class LotMinimalStepController extends Controller{
         }
   }
 
-  def getItem (lotId: String,minimalStepId: String) = Action.async {
+  def getLotMinimalStep (lotId: String,minimalStepId: String) = Action.async {
     request =>
       val response = for {
         results <-LotMinimalStepService.apply.getLotMinimalStepById(lotId,minimalStepId)
@@ -34,7 +34,7 @@ class LotMinimalStepController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem () = Action.async {
+  def getAllLotMinimalStep () = Action.async {
     request =>
       val response = for {
         results <-LotMinimalStepService.apply.getAllLotMinimalSteps()
@@ -43,7 +43,7 @@ class LotMinimalStepController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem (lotId: String,minimalStepId: String) = Action.async {
+  def deleteLotMinimalStep (lotId: String,minimalStepId: String) = Action.async {
     request =>
       val response = for {
         results <-LotMinimalStepService.apply.deleteById(lotId, minimalStepId)

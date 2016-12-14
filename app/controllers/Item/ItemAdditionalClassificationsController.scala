@@ -26,7 +26,7 @@ class ItemAdditionalClassificationsController extends Controller{
         }
   }
 
-  def getItem (itemId: String,classificationsId: String) = Action.async {
+  def getItemAdditionalClassification (itemId: String,classificationsId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemAdditionalClassificationsService.apply.getItemAdditionalClassificationsById(itemId,classificationsId)
@@ -35,7 +35,7 @@ class ItemAdditionalClassificationsController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem () = Action.async {
+  def getAllItemAdditionalClassifications () = Action.async {
     request =>
       val response = for {
         results <-ItemAdditionalClassificationsService.apply.getAllItemAdditionalClassifications()
@@ -44,7 +44,7 @@ class ItemAdditionalClassificationsController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem (itemId: String,classificationsId: String) = Action.async {
+  def deleteItemAdditionalClassification (itemId: String,classificationsId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemAdditionalClassificationsService.apply.deleteById(itemId, classificationsId)

@@ -24,7 +24,7 @@ class ItemUnitController extends Controller{
         }
   }
 
-  def getItem (itemId: String,unitId: String) = Action.async {
+  def getItemUnit (itemId: String,unitId: String) = Action.async {
     request =>
       val response = for {
         results <- ItemUnitService.apply.getItemUnitById(itemId,unitId)
@@ -33,7 +33,7 @@ class ItemUnitController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem () = Action.async {
+  def getAllItemUnit () = Action.async {
     request =>
       val response = for {
         results <- ItemUnitService.apply.getAllItemUnits()
@@ -42,7 +42,7 @@ class ItemUnitController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem (itemId: String,unitId: String) = Action.async {
+  def deleteItemUnit (itemId: String,unitId: String) = Action.async {
     request =>
       val response = for {
         results <- ItemUnitService.apply.deleteById(itemId, unitId)

@@ -24,7 +24,7 @@ class ItemPeriodController extends Controller{
         }
   }
 
-  def getItem (itemId: String,periodId: String) = Action.async {
+  def getItemPeriod (itemId: String,periodId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemPeriodService.apply.getItemPeriodById(itemId,periodId)
@@ -33,7 +33,7 @@ class ItemPeriodController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem () = Action.async {
+  def getAllItemPeriod () = Action.async {
     request =>
       val response = for {
         results <-ItemPeriodService.apply.getAllItemPeriods()
@@ -42,7 +42,7 @@ class ItemPeriodController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem (itemId: String,periodId: String) = Action.async {
+  def deleteItemPeriod (itemId: String,periodId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemPeriodService.apply.deleteById(itemId, periodId)

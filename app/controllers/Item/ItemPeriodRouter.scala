@@ -10,19 +10,19 @@ import play.api.routing.sird._
   * Created by Aiden on 2016/12/13.
   */
 class ItemPeriodRouter @Inject()
-(document: DocumentController)
+(itemPeriod: ItemPeriodController)
   extends SimpleRouter
 {
   override def routes: Routes = {
-    case POST(p"/document/create") =>
-      document.createOrUpdate()
-    case GET(p"/document/$org") =>
-      document.getDocument(org)
-    case GET(p"/document/all") =>
-      document.getAllDocument()
-    case PUT(p"/document/$org") =>
-      document.createOrUpdate()
-    case DELETE(p"/document/$org") =>
-      document.deleteDocument(org)
+    case POST(p"/itemPeriod/create") =>
+      itemPeriod.createOrUpdate()
+    case GET(p"/itemPeriod/$org/$org1") =>
+      itemPeriod.getItemPeriod(org,org1)
+    case GET(p"/itemPeriod/all") =>
+      itemPeriod.getAllItemPeriod()
+    case PUT(p"/itemPeriod/$org/$org1") =>
+      itemPeriod.createOrUpdate()
+    case DELETE(p"/itemPeriod/$org/$org1") =>
+      itemPeriod.deleteItemPeriod(org,org1)
   }
 }

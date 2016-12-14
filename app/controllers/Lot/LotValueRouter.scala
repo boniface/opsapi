@@ -10,19 +10,19 @@ import play.api.routing.sird._
   * Created by Aiden on 2016/12/13.
   */
 class LotValueRouter @Inject()
-(document: DocumentController)
+(lotValue: LotValueController)
   extends SimpleRouter
 {
   override def routes: Routes = {
-    case POST(p"/document/create") =>
-      document.createOrUpdate()
-    case GET(p"/document/$org") =>
-      document.getDocument(org)
-    case GET(p"/document/all") =>
-      document.getAllDocument()
-    case PUT(p"/document/$org") =>
-      document.createOrUpdate()
-    case DELETE(p"/document/$org") =>
-      document.deleteDocument(org)
+    case POST(p"/lotValue/create") =>
+      lotValue.createOrUpdate()
+    case GET(p"/lotValue/$org/$org1") =>
+      lotValue.getLotValue(org,org1)
+    case GET(p"/lotValue/all") =>
+      lotValue.getAllLotValue()
+    case PUT(p"/lotValue/$org/$org1") =>
+      lotValue.createOrUpdate()
+    case DELETE(p"/lotValue/$org/$org1") =>
+      lotValue.deleteLotValue(org,org1)
   }
 }

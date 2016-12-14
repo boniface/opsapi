@@ -1,4 +1,4 @@
-package controllers.Dictionary
+package controllers.Item
 
 import domain.Item.Dictionary
 import play.api.libs.json.Json

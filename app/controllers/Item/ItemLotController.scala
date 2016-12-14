@@ -23,7 +23,7 @@ class ItemLotController extends Controller{
         }
   }
 
-  def getItem (itemId: String,lotId: String) = Action.async {
+  def getItemLot (itemId: String,lotId: String) = Action.async {
     request =>
       val response = for {
         results <- ItemLotService.apply.getItemLotById(itemId,lotId)
@@ -32,7 +32,7 @@ class ItemLotController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllItem () = Action.async {
+  def getAllItemLot () = Action.async {
     request =>
       val response = for {
         results <- ItemLotService.apply.getAllItemLots()
@@ -41,7 +41,7 @@ class ItemLotController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItem (itemId: String,lotId: String) = Action.async {
+  def deleteItemLot (itemId: String,lotId: String) = Action.async {
     request =>
       val response = for {
         results <- ItemLotService.apply.deleteById(itemId, lotId)

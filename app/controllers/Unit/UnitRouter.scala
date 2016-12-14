@@ -10,19 +10,19 @@ import play.api.routing.sird._
   * Created by Aiden on 2016/12/13.
   */
 class UnitRouter @Inject()
-(document: DocumentController)
+(unit: UnitController)
   extends SimpleRouter
 {
   override def routes: Routes = {
-    case POST(p"/document/create") =>
-      document.createOrUpdate()
-    case GET(p"/document/$org") =>
-      document.getDocument(org)
-    case GET(p"/document/all") =>
-      document.getAllDocument()
-    case PUT(p"/document/$org") =>
-      document.createOrUpdate()
-    case DELETE(p"/document/$org") =>
-      document.deleteDocument(org)
+    case POST(p"/unit/create") =>
+      unit.createOrUpdate()
+    case GET(p"/unit/$org") =>
+      unit.getUnit(org)
+    case GET(p"/unit/all") =>
+      unit.getAllUnit()
+    case PUT(p"/unit/$org") =>
+      unit.createOrUpdate()
+    case DELETE(p"/unit/$org") =>
+      unit.deleteUnit(org)
   }
 }
