@@ -3,7 +3,7 @@ package domain
 import play.api.libs.json.Json
 
 /**
-  * Created by Administrator on 11/18/2016.
+  * Created by Mzuvukile Lawana on 11/18/2016.
   */
 case class Bid(
               tenderers : List[Organization],
