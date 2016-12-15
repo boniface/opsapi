@@ -11,12 +11,12 @@ case class Complaint (id : String,
                       author : Organization,
                       title : String,
                       description : String,
-                      date : String = Date,
-                      dateSubmitted : String = Date,
-                      dateAnswered : String = Date,
-                      dateEscalated : String = Date,
-                      dateDecision : String = Date,
-                      dateCanceled : String = Date,
+                      date : String,
+                      dateSubmitted : String,
+                      dateAnswered : String,
+                      dateEscalated : String,
+                      dateDecision : String,
+                      dateCanceled : String,
                       status : String,
                       ttype : String,
                       resolutionType : String,
@@ -26,7 +26,7 @@ case class Complaint (id : String,
                       relatedLot : String,
                       tendererAction : String,
                       documents : List[Document],
-                      tendererActionDate : String = Date)
+                      tendererActionDate : String)
 
 object Complaint{
   implicit val complaintFmt = Json.format[Complaint]
