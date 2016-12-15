@@ -43,12 +43,12 @@ class LotMinimalStepController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteLotMinimalStep (lotId: String,minimalStepId: String) = Action.async {
+ /*def deleteLotMinimalStep (lotId: String,minimalStepId: String) = Action.async {
     request =>
       val response = for {
         results <-LotMinimalStepService.apply.deleteById(lotId, minimalStepId)
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
-  }
+  }*/
 }

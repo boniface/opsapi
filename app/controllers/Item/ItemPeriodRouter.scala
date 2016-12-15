@@ -22,7 +22,7 @@ class ItemPeriodRouter @Inject()
       itemPeriod.getAllItemPeriod()
     case PUT(p"/itemPeriod/$org/$org1") =>
       itemPeriod.createOrUpdate()
-    case DELETE(p"/itemPeriod/$org/$org1") =>
-      itemPeriod.deleteItemPeriod(org,org1)
+   /* case DELETE(p"/itemPeriod/$org/$org1") =>
+      itemPeriod.deleteItemPeriod(org,org1)*/
   }
 }

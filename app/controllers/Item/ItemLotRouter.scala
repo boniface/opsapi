@@ -22,7 +22,7 @@ class ItemLotRouter @Inject()
       itemLot.getAllItemLot()
     case PUT(p"/itemLot/$org/$org1") =>
       itemLot.createOrUpdate()
-    case DELETE(p"/itemLot/$org/$org1") =>
-      itemLot.deleteItemLot(org,org1)
+    /*case DELETE(p"/itemLot/$org/$org1") =>
+      itemLot.deleteItemLot(org,org1)*/
   }
 }

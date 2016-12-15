@@ -12,8 +12,8 @@ import scala.concurrent.Future
   * Created by AidenP on 2016/12/07.
   */
 class LotPeriodServiceImpl extends LotPeriodService with Service{
-  def createOrUpdate(document: LotPeriod): Future[ResultSet] = {
-    LotPeriodRepository.save(document)
+  def createOrUpdate(lotPeriod: LotPeriod): Future[ResultSet] = {
+    LotPeriodRepository.save(lotPeriod)
   }
 
   def getLotPeriodById(lotId: String, periodId: String): Future[Option[LotPeriod]] = {

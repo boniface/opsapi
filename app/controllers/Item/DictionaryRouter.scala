@@ -22,7 +22,7 @@ class DictionaryRouter @Inject()
       dictionary.getAllDictionary()
     case PUT(p"/dictionary/$org") =>
       dictionary.createOrUpdate()
-    case DELETE(p"/dictionary/$org") =>
-      dictionary.deleteDictionary(org)
+    /*case DELETE(p"/dictionary/$org") =>
+      dictionary.deleteDictionary(org)*/
   }
 }

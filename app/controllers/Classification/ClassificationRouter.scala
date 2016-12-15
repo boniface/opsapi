@@ -18,11 +18,11 @@ class ClassificationRouter  @Inject()
           classification.createOrUpdate()
         case GET(p"/classification/$org") =>
           classification.getClassification(org)
-        case GET(p"/classification/all") =>
+     /*   case GET(p"/classification/all") =>
           classification.getAllClassification()
         case PUT(p"/classification/$org") =>
           classification.createOrUpdate()
         case DELETE(p"/classification/$org") =>
-          classification.deleteClassification(org)
+          classification.deleteClassification(org)*/
       }
   }

@@ -43,12 +43,12 @@ class LotValueController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteLotValue (lotId: String,valueId: String) = Action.async {
+/*  def deleteLotValue (lotId: String,valueId: String) = Action.async {
     request =>
       val response = for {
         results <-LotValuesService.apply.deleteById(lotId, valueId)
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
-  }
+  }*/
 }

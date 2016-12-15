@@ -22,7 +22,7 @@ class LotRouter @Inject()
       lot.getAllLot()
     case PUT(p"/lot/$org") =>
       lot.createOrUpdate()
-    case DELETE(p"/lot/$org") =>
-      lot.deleteLot(org)
+   /* case DELETE(p"/lot/$org") =>
+      lot.deleteLot(org)*/
   }
 }

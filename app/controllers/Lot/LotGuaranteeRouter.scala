@@ -22,7 +22,7 @@ class LotGuaranteeRouter @Inject()
       lotGuarantee.getAllLotGuarantee()
     case PUT(p"/lotGuarantee/$org/$org1") =>
       lotGuarantee.createOrUpdate()
-    case DELETE(p"/lotGuarantee/$org/$org1") =>
-      lotGuarantee.deleteLotGuarantee(org,org1)
+   /* case DELETE(p"/lotGuarantee/$org/$org1") =>
+      lotGuarantee.deleteLotGuarantee(org,org1)*/
   }
 }

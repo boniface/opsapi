@@ -5,6 +5,8 @@ import play.api.mvc.{Action, Controller}
 import services.Unit.UnitService
 import domain.Unit.Unit
 
+import scala.concurrent.ExecutionContext.Implicits.global
+
 /**
   * Created by AidenP on 2016/12/09.
   */
@@ -42,12 +44,12 @@ class UnitController extends Controller {
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteUnit (unitId: String) = Action.async {
+  /*def deleteUnit (unitId: String) = Action.async {
     request =>
       val response = for {
         results <-UnitService.apply.deleteById(unitId)
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
-  }
+  }*/
 }

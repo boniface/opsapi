@@ -40,7 +40,7 @@ class DocumentRepository extends CassandraTable[DocumentRepository, Document]{
       dateModified(r),
       language(r),
       documentOf(r),
-      relatedItem(r)
+      relatedItem(r))
   }
 }
 

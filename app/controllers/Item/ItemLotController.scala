@@ -5,6 +5,8 @@ import play.api.libs.json.Json
 import play.api.mvc.{Action, Controller}
 import services.Item.ItemLotService
 
+import scala.concurrent.ExecutionContext.Implicits.global
+
 /**
   * Created by AidenP on 2016/12/13.
   */
@@ -41,12 +43,12 @@ class ItemLotController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItemLot (itemId: String,lotId: String) = Action.async {
+ /* def deleteItemLot (itemId: String,lotId: String) = Action.async {
     request =>
       val response = for {
         results <- ItemLotService.apply.deleteById(itemId, lotId)
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
-  }
+  }*/
 }

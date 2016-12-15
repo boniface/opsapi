@@ -22,7 +22,7 @@ class DocumentRouter @Inject()
       document.getAllDocument()
     case PUT(p"/document/$org") =>
       document.createOrUpdate()
-    case DELETE(p"/document/$org") =>
-      document.deleteDocument(org)
+    /*case DELETE(p"/document/$org") =>
+      document.deleteDocument(org)*/
   }
 }

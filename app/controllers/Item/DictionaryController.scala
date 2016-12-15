@@ -44,12 +44,12 @@ class DictionaryController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteDictionary (itemId: String) = Action.async {
+ /* def deleteDictionary (itemId: String) = Action.async {
     request =>
       val response = for {
         results <-DictionaryService.apply.deleteById(itemId)
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
-  }
+  }*/
 }

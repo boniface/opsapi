@@ -22,7 +22,7 @@ class LotPeriodRouter @Inject()
       lotPeriod.getAllLotPeriod()
     case PUT(p"/lotPeriod/$org/$org1") =>
       lotPeriod.createOrUpdate()
-    case DELETE(p"/lotPeriod/$org/$org1") =>
-      lotPeriod.deleteLotPeriod(org,org1)
+  /*  case DELETE(p"/lotPeriod/$org/$org1") =>
+      lotPeriod.deleteLotPeriod(org,org1)*/
   }
 }

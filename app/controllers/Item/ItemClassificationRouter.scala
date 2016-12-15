@@ -22,7 +22,7 @@ class ItemClassificationRouter @Inject()
       itemClassification.getAllItemClassification()
     case PUT(p"/itemClassification/$org/$org1") =>
       itemClassification.createOrUpdate()
-    case DELETE(p"/itemClassification/$org/$org1") =>
-      itemClassification.deleteItemClassification(org,org1)
+    /*case DELETE(p"/itemClassification/$org/$org1") =>
+      itemClassification.deleteItemClassification(org,org1)*/
   }
 }

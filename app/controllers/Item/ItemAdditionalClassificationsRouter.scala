@@ -21,7 +21,7 @@ class ItemAdditionalClassificationsRouter @Inject()
       itemAdditionalClassifications.getAllItemAdditionalClassifications()
     case PUT(p"/itemAdditionalClassifications/$org/$org1") =>
       itemAdditionalClassifications.createOrUpdate()
-    case DELETE(p"/itemAdditionalClassifications/$org,$org1") =>
-      itemAdditionalClassifications.deleteItemAdditionalClassification(org,org1)
+    /*case DELETE(p"/itemAdditionalClassifications/$org,$org1") =>
+      itemAdditionalClassifications.deleteItemAdditionalClassification(org,org1)*/
   }
 }

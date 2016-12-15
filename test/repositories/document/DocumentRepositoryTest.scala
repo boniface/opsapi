@@ -23,9 +23,9 @@ class DocumentRepositoryTest extends FunSuite with BeforeAndAfterEach{
 
   test("testSaveOrUpdate") {
     val document = Document(
-      "test",
-      Map("test"->"test"),
       "12",
+      Map("test"->"test"),
+      "test",
       "test",
       "test",
       "www.test.com",

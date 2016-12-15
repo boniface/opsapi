@@ -22,7 +22,7 @@ class ItemUnitRouter @Inject()
       document.getAllItemUnit()
     case PUT(p"/document/$org/$org1") =>
       document.createOrUpdate()
-    case DELETE(p"/document/$org/$org1") =>
-      document.deleteItemUnit(org,org1)
+   /* case DELETE(p"/document/$org/$org1") =>
+      document.deleteItemUnit(org,org1)*/
   }
 }

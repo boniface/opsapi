@@ -44,12 +44,12 @@ class ItemAdditionalClassificationsController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItemAdditionalClassification (itemId: String,classificationsId: String) = Action.async {
+ /* def deleteItemAdditionalClassification (itemId: String,classificationsId: String) = Action.async {
     request =>
       val response = for {
         results <-ItemAdditionalClassificationsService.apply.deleteById(itemId, classificationsId)
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
-  }
+  }*/
 }

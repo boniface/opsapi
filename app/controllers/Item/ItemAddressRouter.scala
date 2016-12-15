@@ -22,7 +22,7 @@ class ItemAddressRouter @Inject()
       itemAddress.getAllItemAddress()
     case PUT(p"/itemAddress/$org") =>
       itemAddress.createOrUpdate()
-    case DELETE(p"/itemAddress/$org/$org1") => 
-      itemAddress.deleteItemAddress(org,org1)
+    /*case DELETE(p"/itemAddress/$org/$org1") =>
+      itemAddress.deleteItemAddress(org,org1)*/
   }
 }

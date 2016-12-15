@@ -35,7 +35,7 @@ class ClassificationController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def getAllClassification () = Action.async {
+ /* def getAllClassification () = Action.async {
     request =>
       val response = for {
         results <- ClassificationService.apply.getAllClassifications()
@@ -51,6 +51,6 @@ class ClassificationController extends Controller{
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
-  }
+  }*/
 
 }

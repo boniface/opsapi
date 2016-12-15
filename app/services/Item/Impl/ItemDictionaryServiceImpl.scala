@@ -25,6 +25,6 @@ class ItemDictionaryServiceImpl extends ItemDictionaryService with Service{
   }
 
   def deleteById(itemId: String,Dictionary: String): Future[ResultSet] = {
-    ItemDictionaryRepository.deleteById(itemId,Dictionary))
+    ItemDictionaryRepository.deleteById(itemId,Dictionary)
   }
 }

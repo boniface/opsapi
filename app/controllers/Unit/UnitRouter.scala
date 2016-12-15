@@ -22,7 +22,7 @@ class UnitRouter @Inject()
       unit.getAllUnit()
     case PUT(p"/unit/$org") =>
       unit.createOrUpdate()
-    case DELETE(p"/unit/$org") =>
-      unit.deleteUnit(org)
+   /* case DELETE(p"/unit/$org") =>
+      unit.deleteUnit(org)*/
   }
 }

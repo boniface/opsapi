@@ -21,7 +21,7 @@ class LotMinimalStepRouter @Inject()
       lotMinimalStep.getAllLotMinimalStep()
     case PUT(p"/lotMinimalStep/$org/$org1") =>
       lotMinimalStep.createOrUpdate()
-    case DELETE(p"/lotMinimalStep/$org/$org1") =>
-      lotMinimalStep.deleteLotMinimalStep(org,org1)
+   /* case DELETE(p"/lotMinimalStep/$org/$org1") =>
+      lotMinimalStep.deleteLotMinimalStep(org,org1)*/
   }
 }

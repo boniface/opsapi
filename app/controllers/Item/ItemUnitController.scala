@@ -42,12 +42,12 @@ class ItemUnitController extends Controller{
         .recover { case e: Exception => InternalServerError }
   }
 
-  def deleteItemUnit (itemId: String,unitId: String) = Action.async {
+/*  def deleteItemUnit (itemId: String,unitId: String) = Action.async {
     request =>
       val response = for {
         results <- ItemUnitService.apply.deleteById(itemId, unitId)
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
-  }
+  }*/
 }
