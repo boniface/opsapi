@@ -1,20 +1,15 @@
-import com.typesafe.sbt.packager.archetypes.ServerLoader
-
 name := """opsapi"""
 
 version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
+  .enablePlugins(PlayScala, DebianPlugin, JavaServerAppPackaging)
+  .disablePlugins(PlayLogback)
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.7"
 
 val PhantomVersion = "1.28.14"
 val ScalaZVersion = "7.2.6"
-
-maintainer := "Douglas Namafente <douglas@hashcode.zm>"
-packageSummary in Linux := "Hash Work REST API"
-packageDescription := "Hash Work API Backend "
-serverLoading in Debian := ServerLoader.SystemV
 
 bashScriptExtraDefines ++= Seq(
   """addJava "-Xms1024m"""",
