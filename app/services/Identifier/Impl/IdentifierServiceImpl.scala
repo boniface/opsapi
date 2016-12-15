@@ -18,11 +18,11 @@ class IdentifierServiceImpl extends IdentifierService with Service{
   }
 
   def getIdentifierById(id: String): Future[Option[Identifier]] = {
-    IdentifierRepository.getContactPointById(id)
+    IdentifierRepository.getIdentifierById(id)
   }
 
   def getAllIdentifier(): Future[Seq[Identifier]] = {
-    IdentifierRepository.getAllContactPoint
+    IdentifierRepository.getAllIdentifier
   }
 
   def deleteById(id: String): Future[ResultSet] = {

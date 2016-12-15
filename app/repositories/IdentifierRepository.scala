@@ -53,13 +53,13 @@ import scala.concurrent.Future
         .future()
     }
 
-    def getContactPointById(id: String):Future[Option[Identifier]] = {
+    def getIdentifierById(id: String):Future[Option[Identifier]] = {
       select.where(_.id eqs id).one()
     }
-    def getAllContactPoint: Future[Seq[Identifier]] = {
+    def getAllIdentifier: Future[Seq[Identifier]] = {
       select.fetchEnumerator() run Iteratee.collect()
     }
-    def getContactPoint(id: String): Future[Seq[Identifier]] = {
+    def getIdentifier(id: String): Future[Seq[Identifier]] = {
       select.where(_.id eqs id).fetchEnumerator() run Iteratee.collect()
     }
 

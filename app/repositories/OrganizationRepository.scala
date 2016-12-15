@@ -56,13 +56,13 @@ import scala.concurrent.Future
         .future()
     }
 
-    def getContactPointById(id: String):Future[Option[Organization]] = {
+    def getOrganizationById(id: String):Future[Option[Organization]] = {
       select.where(_.name eqs id).one()
     }
-    def getAllContactPoint: Future[Seq[Organization]] = {
+    def getAllOrganization: Future[Seq[Organization]] = {
       select.fetchEnumerator() run Iteratee.collect()
     }
-    def getContactPoint(id: String): Future[Seq[Organization]] = {
+    def getOrganization(id: String): Future[Seq[Organization]] = {
       select.where(_.name eqs id).fetchEnumerator() run Iteratee.collect()
     }
 

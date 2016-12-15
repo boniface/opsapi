@@ -15,7 +15,7 @@ class AddressServiceImpl extends AddressService with Service{
 
 
 
-  override def createOrUpdate(address: Address): Future[ResultSet] = {
+   def createOrUpdate(address: Address): Future[ResultSet] = {
       AddressRepository.save(address)
     }
 

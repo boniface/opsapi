@@ -4,7 +4,9 @@ name := """opsapi"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val root = (project in file("."))
+  .enablePlugins(PlayScala, DebianPlugin, JavaServerAppPackaging)
+  .disablePlugins(PlayLogback)
 
 scalaVersion := "2.11.8"
 
@@ -52,7 +54,7 @@ libraryDependencies += "com.esotericsoftware.kryo" % "kryo" % "2.24.0"
 libraryDependencies += "org.typelevel" %% "cats" % "0.7.2"
 // https://mvnrepository.com/artifact/com.github.nscala-time/nscala-time_2.11
 libraryDependencies += "com.github.nscala-time" % "nscala-time_2.11" % "2.12.0"
-
+libraryDependencies += "com.typesafe.play" % "play-logback_2.11" % "2.5.1"
 // https://mvnrepository.com/artifact/org.apache.commons/commons-email
 libraryDependencies += "org.apache.commons" % "commons-email" % "1.4"
 

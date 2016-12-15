@@ -34,12 +34,12 @@ class AddressRepositoryTest extends FunSuite with BeforeAndAfterEach{
       assert(result.isExhausted)
     }
 
-    test("testGetFundingSources") {
+    test("testGetAddress") {
       val result = Await.result(AddressRepository.getAddress("10Pienaarweg"), 2.minutes)
       assert(result.head.streetAddress === "10Pienaarweg")
     }
 
-    test("testFindAllFundingSources") {
+    test("testFindAllAddress") {
       val result = Await.result(AddressRepository.getAllAddress, 2.minutes)
       assert( result.size > 0)
     }
