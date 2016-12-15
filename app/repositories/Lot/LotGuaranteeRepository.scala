@@ -4,7 +4,7 @@ import com.datastax.driver.core.Row
 import com.websudos.phantom.CassandraTable
 import com.websudos.phantom.dsl._
 import com.websudos.phantom.reactivestreams._
-import conf.connection.DataConnection
+import conf.DataConnection
 import domain.Lot.LotGuarantee
 
 import scala.concurrent.Future

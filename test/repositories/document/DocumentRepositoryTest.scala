@@ -1,6 +1,6 @@
 package repositories.document
 
-import conf.connection.DataConnection
+import conf.DataConnection
 import domain.Document.Document
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import repositories.Document.DocumentRepository

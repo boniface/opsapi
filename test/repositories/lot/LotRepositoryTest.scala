@@ -1,6 +1,6 @@
 package repositories.lot
 
-import conf.connection.DataConnection
+import conf.DataConnection
 import domain.Lot.Lot
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import repositories.Lot.LotRepository

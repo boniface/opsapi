@@ -1,6 +1,6 @@
 package repositories.classification
 
-import conf.connection.DataConnection
+import conf.DataConnection
 import domain.Classification.Classification
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import repositories.Classification.ClassificationRepository

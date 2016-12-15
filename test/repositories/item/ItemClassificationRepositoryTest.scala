@@ -1,7 +1,7 @@
 package repositories.item
 
 import Item.ItemClassification
-import conf.connection.DataConnection
+import conf.DataConnection
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import repositories.Item.ItemClassificationRepository
 import services.Item.ItemClassificationService

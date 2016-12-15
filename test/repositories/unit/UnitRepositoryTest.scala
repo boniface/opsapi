@@ -1,7 +1,6 @@
 package repositories.unit
 
-import conf.connection.DataConnection
-
+import conf.DataConnection
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import repositories.Unit.UnitRepository
 import services.Unit.UnitService

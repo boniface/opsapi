@@ -1,4 +1,4 @@
-package conf.connection
+package conf
 
 import java.net.InetAddress
 

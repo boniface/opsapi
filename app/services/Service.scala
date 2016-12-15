@@ -1,6 +1,6 @@
 package services
 
-import conf.connection.DataConnection
+import conf.DataConnection
 
 /**
   * Created by AidenP on 2016/12/07.

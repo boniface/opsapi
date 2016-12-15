@@ -1,6 +1,6 @@
 package repositories.item
 
-import conf.connection.DataConnection
+import conf.DataConnection
 import domain.Item.ItemPeriod
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
 import repositories.Item.ItemPeriodRepository
