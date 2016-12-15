@@ -5,7 +5,8 @@ import play.api.libs.json.Json
 /**
   * Created by Mzuvukile Lawana on 2016/11/19.
   */
-case class ProcuringEntity (name:String,
+case class ProcuringEntity (procuringEntityId:String,
+                            name:String,
                             identifier: Identifier,
                             additionalIdentifiers:List[Identifier],
                             address:Address,

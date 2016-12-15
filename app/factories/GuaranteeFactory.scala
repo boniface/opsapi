@@ -8,7 +8,8 @@ import domain.Guarantee
 class GuaranteeFactory {
 
   def createGuarantee(values:Map[String, String],amount: Float):Guarantee={
-    Guarantee(amount = amount,
+    Guarantee(guaranteeId = values("guaranteeId"),
+      amount = amount,
       currency = values("currency"))
   }
 }

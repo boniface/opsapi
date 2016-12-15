@@ -5,7 +5,8 @@ import play.api.libs.json.Json
 /**
   * Created by Mzuvukile Lawana on 2016/11/19.
   */
-case class Feature (code:String,
+case class Feature (featureId:String,
+                    code:String,
                     featureOf:String,
                     relatedItem:String,
                     title:String,
