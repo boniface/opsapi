@@ -1,7 +1,6 @@
 package controllers.classification
 
 import domain.Classification.Classification
-import org.joda.time.DateTime
 import org.scalatestplus.play.{OneAppPerTest, PlaySpec}
 import play.api.libs.json.Json
 import play.api.test.FakeRequest
@@ -32,15 +31,13 @@ class ClassificationControllerTest extends PlaySpec with OneAppPerTest {
         println(" The Content is ", contentAsString(request))
       }
 
-      "Get Mail From Controller" in {
-        val request = route(app, FakeRequest(GET, "/classification/test")
+      "Get Classification From Controller" in {
+        val request = route(app, FakeRequest(GET, "/classification/1")
         ).get
         status(request) mustBe OK
         contentType(request) mustBe Some("application/json")
         println(" The Output", contentAsJson(request))
       }
-
-
     }
   }
 }

@@ -1,6 +1,6 @@
-package controllers.item
+package controllers.lot
 
-import domain.Item.ItemPeriod
+import domain.Lot.LotValues
 import org.scalatestplus.play.{OneAppPerTest, PlaySpec}
 import play.api.libs.json.Json
 import play.api.test.FakeRequest
@@ -9,8 +9,8 @@ import play.api.test.Helpers._
 /**
   * Created by AidenP on 2016/12/13.
   */
-class ItemPeriodControllerTest extends PlaySpec with OneAppPerTest {
-  val itemPeriod = ItemPeriod(
+class LotValuesControllerTest extends PlaySpec with OneAppPerTest {
+  val lotValues = LotValues(
     "4",
     "8")
 
@@ -18,19 +18,19 @@ class ItemPeriodControllerTest extends PlaySpec with OneAppPerTest {
 
 
 
-    "ItemPeriodController" should {
+    "LotValueController" should {
 
-      "Create ItemPeriod Object in Through Controller" in {
-        val request =  route(app, FakeRequest(POST, "/itemPeriod/create")
-          .withJsonBody(Json.toJson(itemPeriod)))
+      "Create LotValue Object in Through Controller" in {
+        val request =  route(app, FakeRequest(POST, "/lotValues/create")
+          .withJsonBody(Json.toJson(lotValues)))
           .get
         status(request) mustBe OK
         contentType(request) mustBe Some("application/json")
         println(" The Content is ", contentAsString(request))
       }
 
-      "Get ItemPeriod From Controller" in {
-        val request = route(app, FakeRequest(GET, "/itemPeriod/4/8")
+      "Get LotValue From Controller" in {
+        val request = route(app, FakeRequest(GET, "/lotValues/4/8")
         ).get
         status(request) mustBe OK
         contentType(request) mustBe Some("application/json")

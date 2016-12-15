@@ -1,36 +1,36 @@
-package controllers.item
+package controllers.unit
 
-import domain.Item.ItemPeriod
 import org.scalatestplus.play.{OneAppPerTest, PlaySpec}
 import play.api.libs.json.Json
 import play.api.test.FakeRequest
 import play.api.test.Helpers._
+import domain.Unit.Unit
 
 /**
-  * Created by AidenP on 2016/12/13.
+  * Created by Aiden on 2016/12/15.
   */
-class ItemPeriodControllerTest extends PlaySpec with OneAppPerTest {
-  val itemPeriod = ItemPeriod(
-    "4",
-    "8")
+class UnitControllerTest extends PlaySpec with OneAppPerTest {
+  val unit = Unit(
+    "12345",
+    "test")
 
   "Routes" should {
 
 
 
-    "ItemPeriodController" should {
+    "UnitController" should {
 
-      "Create ItemPeriod Object in Through Controller" in {
-        val request =  route(app, FakeRequest(POST, "/itemPeriod/create")
-          .withJsonBody(Json.toJson(itemPeriod)))
+      "Create Unit Object in Through Controller" in {
+        val request =  route(app, FakeRequest(POST, "/unit/create")
+          .withJsonBody(Json.toJson(unit)))
           .get
         status(request) mustBe OK
         contentType(request) mustBe Some("application/json")
         println(" The Content is ", contentAsString(request))
       }
 
-      "Get ItemPeriod From Controller" in {
-        val request = route(app, FakeRequest(GET, "/itemPeriod/4/8")
+      "Get Unit From Controller" in {
+        val request = route(app, FakeRequest(GET, "/unit/12345")
         ).get
         status(request) mustBe OK
         contentType(request) mustBe Some("application/json")
