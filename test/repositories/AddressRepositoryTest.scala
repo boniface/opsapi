@@ -22,7 +22,7 @@ class AddressRepositoryTest extends FunSuite with BeforeAndAfterEach{
     }
 
     test("testSaveOrUpdate") {
-      val details: Map[String, String] = Map()
+
       val fundingSources = Address(
         "10Pienaarweg",
         "CapeTown",

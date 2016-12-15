@@ -14,13 +14,19 @@ class AddressServiceTest extends FunSuite {
 
 
   test("testSaveOrUpdate") {
-    val address = Address("ORG100", "FS100", "1", "Til", "468")
+    val address = Address(
+      "10Pienaarweg",
+      "CapeTown",
+      "WesternCape",
+      "7441",
+      "SouthAfrica")
+
     val result = Await.result(AddressService.apply.createOrUpdate(address), 2.minutes)
     assert(result.isExhausted)
   }
 
   test("testAddress") {
-    val result = Await.result(AddressService.apply.getAddressById("ORG100"), 2.minutes)
+    val result = Await.result(AddressService.apply.getAddressById("10Pienaarweg"), 2.minutes)
     assert(result.head.jobClassificationId === "FS100")
   }
 }
