@@ -1,6 +1,8 @@
 package factories
 
-import domain.{Contract, Period, Value}
+import domain.Contract.Contract
+import domain.Period.Period
+import domain.Value.Value
 
 /**
   * Created by sanXion on 2016/12/11.

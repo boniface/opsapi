@@ -1,5 +1,7 @@
-package domain
+package domain.Contract
 
+import domain.Period.Period
+import domain.Value.Value
 import play.api.libs.json.Json
 
 /**

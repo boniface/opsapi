@@ -1,6 +1,6 @@
 package factories
 
-import domain.Date
+import domain.Date.Date
 
 /**
   * Created by sanXion on 2016/12/11.

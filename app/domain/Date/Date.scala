@@ -1,8 +1,7 @@
-package domain
+package domain.Date
 
-import play.api.libs.json.{Json, Writes}
 import play.api.libs.json.Writes.dateWrites
-import java.util.{Calendar, Date};
+import play.api.libs.json.{Json, Writes};
 
 /**
   * Created by sanXion on 2016/11/24.

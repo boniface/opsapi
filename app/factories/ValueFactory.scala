@@ -1,6 +1,6 @@
 package factories
 
-import domain.Value
+import domain.Value.Value
 
 /**
   * Created by sanXion on 2016/12/11.

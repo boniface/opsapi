@@ -1,6 +1,6 @@
 package factories
 
-import domain.Complaint
+import domain.Complaint.Complaint
 
 /**
   * Created by sanXion on 2016/12/11.
