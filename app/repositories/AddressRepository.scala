@@ -43,13 +43,13 @@ object AddressRepository extends AddressRepository with RootConnector {
       .future()
   }
 
-  def getAddressTypeById(streetAddress: String):Future[Option[Address]] = {
+  def getAddressById(streetAddress: String):Future[Option[Address]] = {
     select.where(_.streetAddress eqs streetAddress).one()
   }
-  def getAddressTypes(streetAddress:String): Future[Seq[Address]] = {
+  def getAllAddress(streetAddress:String): Future[Seq[Address]] = {
     select.where(_.streetAddress eqs streetAddress).fetchEnumerator() run Iteratee.collect()
   }
-  def getAddressType(streetAddress: String): Future[Seq[Address]] = {
+  def getAddress(streetAddress: String): Future[Seq[Address]] = {
     select.where(_.streetAddress eqs streetAddress).fetchEnumerator() run Iteratee.collect()
   }
 

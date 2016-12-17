@@ -14,9 +14,9 @@ import scala.concurrent.Future
 trait AddressService {
   def createOrUpdate(addressType:Address):Future[ResultSet]
 
-  def getAddressTypeById(addressType: String): Future[Option[Address]]
+  def getAddressById(addressType: String): Future[Option[Address]]
 
-  def getAddressTypes(addressType: String): Future[Seq[Address]]
+  def getAllAddress(addressType: String): Future[Seq[Address]]
 }
 
 object AddressService{

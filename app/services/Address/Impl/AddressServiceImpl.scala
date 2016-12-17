@@ -16,11 +16,11 @@ class AddressServiceImpl extends AddressService with Service{
     AddressRepository.save(address)
   }
 
-  override def getAddressTypeById(addressType: String): Future[Option[Address]] = {
-    AddressRepository.getAddressTypeById(addressType)
+  override def getAddressById(address: String): Future[Option[Address]] = {
+    AddressRepository.getAddressById(address)
   }
 
-  override def getAddressTypes(addressType: String): Future[Seq[Address]] = {
-    AddressRepository.getAddressTypes(addressType)
+  override def getAllAddress(address: String): Future[Seq[Address]] = {
+    AddressRepository.getAllAddress(address)
   }
 }

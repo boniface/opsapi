@@ -26,7 +26,7 @@ class AddressServiceTest extends FunSuite{
   }
 
   test("testGetAddressType") {
-    val result = Await.result(AddressService.apply.getAddressTypeById("AddressTypeID"), 2.minutes)
+    val result = Await.result(AddressService.apply.getAddressById("AddressTypeID"), 2.minutes)
     assert( result.head.streetAddress === "Home")
   }
 }
