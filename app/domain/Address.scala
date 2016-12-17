@@ -3,7 +3,7 @@ package domain
 import play.api.libs.json.Json
 
 /**
-  * Created by hashcode on 2016/08/12.
+  * Created by 212026992 on 2016/11/20.
   */
 case class Address(streetAddress: String,
                        locality: String,
