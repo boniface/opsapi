@@ -1,9 +1,9 @@
 package services
 
 import domain.ContactPoint
-import org.scalatest.FunSuite
-import services.ContactPoint.ContactPointService
 
+import services.ContactPoint.ContactPointService
+import org.scalatest.FunSuite
 import scala.concurrent.Await
 import scala.concurrent.duration._
 

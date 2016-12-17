@@ -1,15 +1,16 @@
 package services
 
 import domain.Address
-import org.scalatest.FunSuite
 import services.Address.AddressService
 
+import org.scalatest.FunSuite
+import scala.concurrent.Await
+import scala.concurrent.duration._
 /**
   * Created by 212026992 on 2016/11/20.
   */
 
-import scala.concurrent.Await
-import scala.concurrent.duration._
+
 
 class AddressServiceTest extends FunSuite{
 
