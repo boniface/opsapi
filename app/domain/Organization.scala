@@ -7,9 +7,9 @@ import play.api.libs.json.Json
   */
 case class Organization(name: String,
                         identifier: String,
-                        additionalIdentifiers: String,
-                        address: String,//address id
-                        contactPoint: String)//contactPoint id
+                        additionalIdentifiers:Map[String, String],
+                        address:Map[String, String],
+                        contactPoint:Map[String, String])
 
 object Organization{
   implicit val organizationFmt = Json.format[Organization]

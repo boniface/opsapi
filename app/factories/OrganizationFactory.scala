@@ -7,14 +7,14 @@ import domain.{Identifier, Organization}
   */
 class OrganizationFactory {
 
-  def createLot(values: Map[String,String],additionalIdentifiers:Map[String,String]
+  def createLot(values: Map[String,String],additionalIdentifiers:Map[String,String],address:Map[String,String],contactPoint:Map[String,String]
                ):Organization={
     Organization(
       name = values("name"),
       identifier = values("identifier"),
-      additionalIdentifiers = values("additionalIdentifiers") ,
-      address = values("address"),
-      contactPoint = values("contactPoint"))
+      additionalIdentifiers = additionalIdentifiers ,
+      address = address,
+      contactPoint = contactPoint)
 
   }
 

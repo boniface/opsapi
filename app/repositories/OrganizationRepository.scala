@@ -5,8 +5,11 @@ import com.websudos.phantom.CassandraTable
 import com.websudos.phantom.dsl._
 import com.websudos.phantom.keys.PartitionKey
 import com.websudos.phantom.reactivestreams._
+
+
+
 import conf.connection.DataConnection
-import domain.Organization
+import domain.{Identifier, Organization}
 /**
   * Created by 212026992 on 12/4/2016.
   */
@@ -20,9 +23,10 @@ import scala.concurrent.Future
 
     object name extends StringColumn(this)with PartitionKey[String]
     object identifier extends StringColumn(this)
-    object additionalIdentifiers extends StringColumn(this)
-    object address extends StringColumn(this)
-    object contactPoint extends StringColumn(this)
+    object additionalIdentifiers extends MapColumn[ String, String](this)
+    object address extends MapColumn  [ String, String](this)
+    object contactPoint extends MapColumn  [ String, String](this)
+
 
 
     override def fromRow(r: Row): Organization={
