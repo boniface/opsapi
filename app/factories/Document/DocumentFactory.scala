@@ -9,7 +9,7 @@ class DocumentFactory {
 
 
 
-  def createDocument(values:Map[String,String], documentType:Map[String,(Map[String, String])]):Document= {
+  def createDocument(values:Map[String,String], documentType:Map[String,String]):Document= {
                 Document(id = values("id"),
                 documentType = documentType,
                 title = values("title"),
