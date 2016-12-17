@@ -1,6 +1,7 @@
 package domain
 
 
+import domain.Document.Document
 import play.api.libs.json.Json
 
 /**

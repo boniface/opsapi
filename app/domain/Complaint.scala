@@ -2,6 +2,7 @@ package domain
 
 import java.util.UUID
 
+import domain.Document.Document
 import play.api.libs.json.Json
 
 /**
