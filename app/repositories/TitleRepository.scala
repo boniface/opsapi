@@ -12,7 +12,7 @@ import scala.concurrent.Future
 /**
   * Created by 212026992 on 12/4/2016.
   */
-class TitleRepository  extends CassandraTable[TitleRepository, Title]{
+sealed class TitleRepository  extends CassandraTable[TitleRepository, Title]{
 
   object tenderCode extends StringColumn(this)with PartitionKey[String]
   object periodicityOfTheTender extends StringColumn(this)
@@ -47,17 +47,15 @@ object TitleRepository extends TitleRepository with RootConnector {
   def getTitleById(id: String):Future[Option[Title]] = {
     select.where(_.tenderCode eqs id).one()
   }
-  def getAllTitle: Future[Seq[Title]] = {
-    select.fetchEnumerator() run Iteratee.collect()
+  def getTitles(id:String): Future[Seq[Title]] = {
+    select.where(_.tenderCode eqs id).fetchEnumerator() run Iteratee.collect()
   }
-  def getTitle(id: String): Future[Seq[Title]] = {
+  def geTitle(id: String): Future[Seq[Title]] = {
     select.where(_.tenderCode eqs id).fetchEnumerator() run Iteratee.collect()
   }
 
   def deleteById(id:String): Future[ResultSet] = {
     delete.where(_.tenderCode eqs id).future()
   }
-
-
 }
 

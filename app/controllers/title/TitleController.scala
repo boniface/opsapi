@@ -1,24 +1,21 @@
-package controllers.address
-
-
-import domain.Address
+package controllers.title
+import domain.Title
 import play.api.libs.json.Json
 import play.api.mvc.{Action, Controller}
-import services.Address.AddressService
-
+import services.Title.TitleService
 /**
-  * Created by 212026992 on 12/14/2016.
+  * Created by 212026992 on 12/17/2016.
   */
-class AddressController extends Controller {
+class TitleController extends Controller {
 
 
   def createOrUpdate = Action.async(parse.json) {
     request =>
       val input = request.body
       println(" THE INPUT IS ", input)
-      val entity = Json.fromJson[Address](input).get
+      val entity = Json.fromJson[Title](input).get
       val response = for {
-        results <- AddressService.apply.createOrUpdate(entity)
+        results <- TitleService.apply.createOrUpdate(entity)
       } yield results
       response.map(ans => Ok(Json.toJson(entity)))
         .recover {
@@ -27,14 +24,12 @@ class AddressController extends Controller {
   }
 
 
-  def getAddress(addressId: String) = Action.async {
+  def getTitle(titleId: String) = Action.async {
     request =>
       val response = for {
-        results <- AddressService.apply.getAddressById(addressId)
+        results <- TitleService.apply.getTitleById(titleId)
       } yield results
       response.map(ans => Ok(Json.toJson(ans)))
         .recover { case e: Exception => InternalServerError }
   }
 }
-
-

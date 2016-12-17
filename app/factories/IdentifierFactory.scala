@@ -2,17 +2,13 @@ package factories
 
 import domain.Identifier
 
-/**
-  * Created by 212026992 on 12/3/2016.
-  */
-class IdentifierFactory {
-  def createLot(values: Map[String,String]
-               ):Identifier={
-    Identifier(
-      scheme = values("scheme"),
-      id = values("id"),
-      legalName = values("legalName"),
-      uri = values("uri"))
 
+class IdentifierFactory {
+  def createIdentifier(values:Map[String, String]):Identifier={
+    Identifier(scheme = values("name"),id = values("email")
+    ,legalName = values("telephone")
+    ,uri = values("faxNumber")
+    )
   }
+
 }

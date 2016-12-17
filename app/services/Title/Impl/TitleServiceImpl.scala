@@ -1,33 +1,26 @@
 package services.Title.Impl
-import services.Service
-import com.websudos.phantom.dsl._
+
+import com.websudos.phantom.dsl.ResultSet
 import domain.Title
 import repositories.TitleRepository
+import services.Service
 import services.Title.TitleService
 
 import scala.concurrent.Future
 
-
 /**
-  * Created by 212026992 on 12/9/2016.
+  * Created by 212026992 on 2016/11/02.
   */
 class TitleServiceImpl extends TitleService with Service{
-
-
-
-  override def createOrUpdate(title: Title): Future[ResultSet] = {
-    TitleRepository.save(title)
+  override def createOrUpdate(identifier: Title): Future[ResultSet] = {
+    TitleRepository.save(identifier)
   }
 
-  def getTitleById(id: String): Future[Option[Title]] = {
-    TitleRepository.getTitleById(id)
+  override def getTitleById(title: String): Future[Option[Title]] = {
+    TitleRepository.getTitleById(title)
   }
 
-  def getAllTitle(): Future[Seq[Title]] = {
-    TitleRepository.getAllTitle
-  }
-
-  def deleteById(id: String): Future[ResultSet] = {
-    TitleRepository.deleteById(id)
+  override def getTitles(title: String): Future[Seq[Title]] = {
+    TitleRepository.getTitles(title)
   }
 }

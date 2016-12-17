@@ -1,25 +1,21 @@
 package services.Identifier
+
 import com.websudos.phantom.dsl._
 import domain.Identifier
-import io.netty.util.concurrent.Future
 import services.Identifier.Impl.IdentifierServiceImpl
+import scala.concurrent.Future
+
 /**
-  * Created by 212026992 on 12/9/2016.
+  * Created by 212026992 on 2016/11/02.
   */
 trait IdentifierService {
+  def createOrUpdate(addressType:Identifier):Future[ResultSet]
 
+  def getIdentifierById(addressType: String): Future[Option[Identifier]]
 
-
-  def createOrUpdate(identifier: Identifier): Future[ResultSet]
-
-  def getIdentifierById(id: String): Future[Option[Identifier]]
-
-  def deleteById(id: String): Future[ResultSet]
-
-  def getAllIdentifier(): Future[Seq[Identifier]]
-
+  def getIdentifiers(addressType: String): Future[Seq[Identifier]]
 }
+
 object IdentifierService{
   def apply: IdentifierService = new IdentifierServiceImpl()
-
 }

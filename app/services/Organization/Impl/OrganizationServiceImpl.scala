@@ -1,6 +1,6 @@
 package services.Organization.Impl
 import services.Service
-import com.websudos.phantom.dsl._
+import com.websudos.phantom.dsl.ResultSet
 import domain.Organization
 import repositories.OrganizationRepository
 import services.Organization.OrganizationService

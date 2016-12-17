@@ -1,24 +1,25 @@
 package services.Title
+
 import com.websudos.phantom.dsl._
 import domain.Title
-import io.netty.util.concurrent.Future
+
+
 import services.Title.Impl.TitleServiceImpl
+
+
+import scala.concurrent.Future
+
 /**
-  * Created by 212026992 on 12/9/2016.
+  * Created by 212026992 on 2016/11/02.
   */
 trait TitleService {
+  def createOrUpdate(title:Title):Future[ResultSet]
 
-  def createOrUpdate(title: Title): Future[ResultSet]
+  def getTitleById(title: String): Future[Option[Title]]
 
-  def getTitleById(id: String): Future[Option[Title]]
-
-  def deleteById(id: String): Future[ResultSet]
-
-  def getAllTitle(): Future[Seq[Title]]
-
+  def getTitles(title: String): Future[Seq[Title]]
 }
+
 object TitleService{
   def apply: TitleService = new TitleServiceImpl()
-
-
 }

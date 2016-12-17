@@ -1,31 +1,26 @@
 package services.Identifier.Impl
 
+import com.websudos.phantom.dsl.ResultSet
 import domain.Identifier
 import repositories.IdentifierRepository
 import services.Identifier.IdentifierService
 import services.Service
-import com.websudos.phantom.dsl._
+
 import scala.concurrent.Future
+
 /**
-  * Created by 212026992 on 12/9/2016.
+  * Created by 212026992 on 2016/11/02.
   */
 class IdentifierServiceImpl extends IdentifierService with Service{
-
-
-
   override def createOrUpdate(identifier: Identifier): Future[ResultSet] = {
     IdentifierRepository.save(identifier)
   }
 
-  def getIdentifierById(id: String): Future[Option[Identifier]] = {
-    IdentifierRepository.getIdentifierById(id)
+  override def getIdentifierById(identifier: String): Future[Option[Identifier]] = {
+    IdentifierRepository.getIdentifierById(identifier)
   }
 
-  def getAllIdentifier(): Future[Seq[Identifier]] = {
-    IdentifierRepository.getAllIdentifier
-  }
-
-  def deleteById(id: String): Future[ResultSet] = {
-    IdentifierRepository.deleteById(id)
+  override def getIdentifiers(identifier: String): Future[Seq[Identifier]] = {
+    IdentifierRepository.getIdentifiers(identifier)
   }
 }
