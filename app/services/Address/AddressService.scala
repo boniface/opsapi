@@ -9,7 +9,7 @@ import services.Address.Impl.AddressServiceImpl
 import scala.concurrent.Future
 
 /**
-  * Created by 212026992 on 2016/11/20.
+  * Created by 212026992 on 12/3/2016.
   */
 trait AddressService {
   def createOrUpdate(addressType:Address):Future[ResultSet]

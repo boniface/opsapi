@@ -9,7 +9,9 @@ import conf.connection.DataConnection
 import domain.Address
 
 import scala.concurrent.Future
-
+/**
+  * Created by 212026992 on 12/3/2016.
+  */
 sealed class AddressRepository extends CassandraTable[AddressRepository,Address]{
   object streetAddress extends StringColumn(this) with PartitionKey[String]
   object locality extends StringColumn(this)

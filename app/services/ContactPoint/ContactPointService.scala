@@ -1,25 +1,22 @@
 package services.ContactPoint
 
-import domain.ContactPoint
 import com.websudos.phantom.dsl._
-import io.netty.util.concurrent.Future
+import domain.ContactPoint
 import services.ContactPoint.Impl.ContactPointServiceImpl
+
+
+import scala.concurrent.Future
 /**
-  * Created by 212026992 on 12/9/2016.
+  * Created by 212026992 on 12/3/2016.
   */
 trait ContactPointService {
+  def createOrUpdate(addressType:ContactPoint):Future[ResultSet]
 
+  def getContactPointById(addressType: String): Future[Option[ContactPoint]]
 
-  def createOrUpdate(contactPoint: ContactPoint): Future[ResultSet]
-
-  def getAddressById(id: String): Future[Option[ContactPoint]]
-
-  def deleteById(id: String): Future[ResultSet]
-
-  def getAllAddress(): Future[Seq[ContactPoint]]
-
+  def getContactPoints(addressType: String): Future[Seq[ContactPoint]]
 }
+
 object ContactPointService{
   def apply: ContactPointService = new ContactPointServiceImpl()
-
 }
