@@ -4,7 +4,6 @@ package repositories
 import conf.connection.DataConnection
 import domain.Address
 import org.scalatest.{BeforeAndAfterEach, FunSuite}
-import repositories.Address.AddressRepository
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -39,10 +38,6 @@ class AddressRepositoryTest extends FunSuite with BeforeAndAfterEach{
       assert(result.head.streetAddress === "10Pienaarweg")
     }
 
-    test("testFindAllAddress") {
-      val result = Await.result(AddressRepository.getAllAddress, 2.minutes)
-      assert( result.size > 0)
-    }
     override protected def afterEach(): Unit = {
       AddressRepository.truncate().future()
     }
