@@ -1,34 +1,26 @@
 package services.Address.Impl
-import com.websudos.phantom.dsl._
+
+import com.websudos.phantom.dsl.ResultSet
 import domain.Address
-import repositories.Address.AddressRepository
+import repositories.AddressRepository
 import services.Address.AddressService
 import services.Service
 
 import scala.concurrent.Future
+
 /**
-  * Created by 212026992 on 12/9/2016.
+  * Created by Aphiwe on 2016/11/02.
   */
-
-
 class AddressServiceImpl extends AddressService with Service{
-
-
-
-   def createOrUpdate(address: Address): Future[ResultSet] = {
-      AddressRepository.save(address)
-    }
-
-    def getAddressById(id: String): Future[Option[Address]] = {
-      AddressRepository.getAddressById(id)
-    }
-
-    def getAllAddress(): Future[Seq[Address]] = {
-      AddressRepository.getAllAddress
-    }
-
-    def deleteById(id: String): Future[ResultSet] = {
-      AddressRepository.deleteById(id)
-    }
+  override def createOrUpdate(address: Address): Future[ResultSet] = {
+    AddressRepository.save(address)
   }
 
+  override def getAddressTypeById(addressType: String): Future[Option[Address]] = {
+    AddressRepository.getAddressTypeById(addressType)
+  }
+
+  override def getAddressTypes(addressType: String): Future[Seq[Address]] = {
+    AddressRepository.getAddressTypes(addressType)
+  }
+}

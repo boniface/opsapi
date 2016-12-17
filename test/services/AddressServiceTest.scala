@@ -1,32 +1,32 @@
 package services
 
-
 import domain.Address
 import org.scalatest.FunSuite
 import services.Address.AddressService
 
+/**
+  * Created by Aphiwe on 2016/12/13.
+  */
+
 import scala.concurrent.Await
 import scala.concurrent.duration._
-/**
-  * Created by 212026992 on 12/14/2016.
-  */
-class AddressServiceTest extends FunSuite {
 
+class AddressServiceTest extends FunSuite{
 
   test("testSaveOrUpdate") {
-    val address = Address(
-      "10Pienaarweg",
-      "CapeTown",
-      "WesternCape",
-      "7441",
-      "SouthAfrica")
+    val jobClassification = Address( "streetAddress",
+      "locality",
+      "region",
+      "postalCode",
+      "countryName"
+      )
 
-    val result = Await.result(AddressService.apply.createOrUpdate(address), 2.minutes)
+    val result = Await.result(AddressService.apply.createOrUpdate(jobClassification), 2.minutes)
     assert(result.isExhausted)
   }
 
-  test("testAddress") {
-    val result = Await.result(AddressService.apply.getAddressById("10Pienaarweg"), 2.minutes)
-    assert(result.head.jobClassificationId === "FS100")
+  test("testGetAddressType") {
+    val result = Await.result(AddressService.apply.getAddressTypeById("AddressTypeID"), 2.minutes)
+    assert( result.head.streetAddress === "Home")
   }
 }
