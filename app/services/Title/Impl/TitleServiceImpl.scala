@@ -3,7 +3,6 @@ package services.Title.Impl
 import com.websudos.phantom.dsl.ResultSet
 import domain.Title
 import repositories.TitleRepository
-import services.Service
 import services.Title.TitleService
 
 import scala.concurrent.Future

@@ -4,7 +4,6 @@ import com.websudos.phantom.dsl.ResultSet
 import domain.ContactPoint
 import repositories.ContactPointRepository
 import services.ContactPoint.ContactPointService
-import services.Service
 
 import scala.concurrent.Future
 
