@@ -7,7 +7,7 @@ import domain.{Identifier, Organization}
   */
 class OrganizationFactory {
 
-  def createLot(values: Map[String,String],additionalIdentifiers:Map[String,String],address:Map[String,String],contactPoint:Map[String,String]
+  def createOrganization(values: Map[String,String],additionalIdentifiers:Map[String,String],address:Map[String,String],contactPoint:Map[String,String]
                ):Organization={
     Organization(
       name = values("name"),
