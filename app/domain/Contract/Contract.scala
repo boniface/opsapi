@@ -13,14 +13,19 @@ case class Contract (id : String,
                     contractNumber : String,
                     title : String,
                     description : String,
-                    value : Value,
-                    items : List[Item],
-                    suppliers : List[Organization],
+                    //value : Value,
+                    value : String,
+                    //items : List[Item],
+                    items : String,
+                    //suppliers : List[Organization],
+                    suppliers : String,
                     status : String,
-                    period : Period,
+                    //period : Period,
+                    period : String,
                     dateSigned : String,
                     date : String,
-                    documents : List[Document])
+                    //documents : List[Document],
+                    documents : String)
 
 object Contract{
   implicit val contractFmt = Json.format[Contract]
