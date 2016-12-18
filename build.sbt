@@ -1,3 +1,5 @@
+import com.typesafe.sbt.packager.archetypes.ServerLoader
+
 name := """opsapi"""
 
 version := "1.0-SNAPSHOT"
@@ -26,7 +28,11 @@ libraryDependencies ++= Seq(
   "com.chuusai" %% "shapeless" % "2.2.5"
 )
 
+<<<<<<< HEAD
+// https://mvnrepository.com/artifact/io.getclump/clump_2.11
+=======
  // https://mvnrepository.com/artifact/io.getclump/clump_2.11
+>>>>>>> c93555dc485c1c2f2584037488008fbec01cb6cd
 libraryDependencies += "io.getclump" % "clump_2.11" % "0.0.11"
 libraryDependencies += "io.monix" %% "monix" % "2.0.0"
 libraryDependencies += "me.lessis" %% "courier" % "0.1.3"
@@ -69,4 +75,8 @@ resolvers ++= Seq(
   "Websudos releases" at "https://dl.bintray.com/websudos/oss-releases/",
   Resolver.sonatypeRepo("releases"),
   Resolver.sonatypeRepo("snapshots")
+<<<<<<< HEAD
 )
+=======
+)
+>>>>>>> c93555dc485c1c2f2584037488008fbec01cb6cd
