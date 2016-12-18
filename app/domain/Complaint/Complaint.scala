@@ -1,14 +1,15 @@
 package domain.Complaint
 
-import domain.Document
+import java.util.UUID
+
+import domain.{Document, Organization}
 import play.api.libs.json.Json
 
 /**
   * Created by sanXion on 2016/11/24.
   */
 case class Complaint (id : String,
-                      //author : Organization,
-                      author : String,
+                      author : Organization,
                       title : String,
                       description : String,
                       date : String,
@@ -21,13 +22,11 @@ case class Complaint (id : String,
                       ttype : String,
                       resolutionType : String,
                       satisfied : Boolean,
-                      //satisfied : String,
                       decision : String,
                       cancellationReason : String,
                       relatedLot : String,
                       tendererAction : String,
-                      //documents : List[Document],
-                      documents : String,
+                      documents : List[Document],
                       tendererActionDate : String)
 
 object Complaint{

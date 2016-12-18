@@ -1,5 +1,6 @@
 package domain.Contract
 
+import domain.{Document, Item, Organization}
 import domain.Period.Period
 import domain.Value.Value
 import play.api.libs.json.Json
@@ -13,19 +14,14 @@ case class Contract (id : String,
                     contractNumber : String,
                     title : String,
                     description : String,
-                    //value : Value,
-                    value : String,
-                    //items : List[Item],
-                    items : String,
-                    //suppliers : List[Organization],
-                    suppliers : String,
+                    value : Value,
+                    items : List[Item],
+                    suppliers : List[Organization],
                     status : String,
-                    //period : Period,
-                    period : String,
+                    period : Period,
                     dateSigned : String,
                     date : String,
-                    //documents : List[Document],
-                    documents : String)
+                    documents : List[Document])
 
 object Contract{
   implicit val contractFmt = Json.format[Contract]
