@@ -1,8 +1,7 @@
 package domain.Contract
 
-import domain.{Document, Item, Organization}
-import domain.Period.Period
-import domain.Value.Value
+import domain.Document.Document
+import domain.Item.Item.Item
 import play.api.libs.json.Json
 
 /**

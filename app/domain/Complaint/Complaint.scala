@@ -2,7 +2,7 @@ package domain.Complaint
 
 import java.util.UUID
 
-import domain.{Document, Organization}
+import domain.Document.Document
 import play.api.libs.json.Json
 
 /**
