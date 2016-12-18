@@ -4,6 +4,7 @@ import com.websudos.phantom.dsl.ResultSet
 import domain.Identifier
 import repositories.IdentifierRepository
 import services.Identifier.IdentifierService
+import services.Service
 
 import scala.concurrent.Future
 
