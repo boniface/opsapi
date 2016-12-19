@@ -1,7 +1,6 @@
-package domain.Contract
+package domain
 
 import domain.Document.Document
-import domain.Item.Item.Item
 import play.api.libs.json.Json
 
 /**

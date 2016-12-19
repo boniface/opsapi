@@ -6,7 +6,7 @@ import com.websudos.phantom.column.PrimitiveColumn
 import com.websudos.phantom.dsl._
 import com.websudos.phantom.reactivestreams._
 import conf.DataConnection
-import domain.Contract.Contract
+import domain.Contract
 
 import scala.concurrent.Future
 

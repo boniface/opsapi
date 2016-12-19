@@ -1,7 +1,6 @@
 package factories
 
-import domain.Complaint.Complaint
-import domain.{Document, Organization}
+import domain.{Complaint, Document, Organization}
 
 /**
   * Created by sanXion on 2016/12/11.

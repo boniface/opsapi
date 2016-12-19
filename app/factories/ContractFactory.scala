@@ -1,7 +1,6 @@
 package factories
 
-import domain.Contract.Contract
-import domain.{Document, Item, Organization}
+import domain.{Contract, Document, Item, Organization}
 import domain.Period.Period
 import domain.Value.Value
 

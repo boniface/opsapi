@@ -1,6 +1,4 @@
-package domain.Complaint
-
-import java.util.UUID
+package domain
 
 import domain.Document.Document
 import play.api.libs.json.Json
