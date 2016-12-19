@@ -43,11 +43,11 @@ object ComplaintDocumentRepository extends ComplaintDocumentRepository with Root
     select.where(_.complaintId eqs ComplaintId). and(_.documentId eqs DocumentId).one()
   }
 
-  def getAllItemClassifications: Future[Seq[ComplaintDocument]] = {
+  def getComplaintDocuments: Future[Seq[ComplaintDocument]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 
-  def getItemClassification(ComplaintId: String, DocumentId: String): Future[Seq[ComplaintDocument]] = {
+  def getComplaintDocument(ComplaintId: String, DocumentId: String): Future[Seq[ComplaintDocument]] = {
     select.where(_.complaintId eqs ComplaintId). and(_.documentId eqs DocumentId).fetchEnumerator() run Iteratee.collect()
   }
 

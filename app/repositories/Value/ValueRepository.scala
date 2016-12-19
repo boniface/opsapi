@@ -29,7 +29,7 @@ class ValueRepository extends CassandraTable[ValueRepository, Value] {
   }
 }
 
-object PeriodRepository extends ValueRepository with RootConnector {
+object ValueRepository extends ValueRepository with RootConnector {
   override lazy val tableName = "values"
 
   override implicit def space: KeySpace = DataConnection.keySpace

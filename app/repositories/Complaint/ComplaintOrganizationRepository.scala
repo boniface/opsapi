@@ -42,11 +42,11 @@ object ComplaintOrganizationRepository extends ComplaintOrganizationRepository w
     select.where(_.complaintId eqs ComplaintId). and(_.organizationId eqs OrganizationId).one()
   }
 
-  def getAllItemClassifications: Future[Seq[ComplaintOrganization]] = {
+  def getAllComplaintOrganizations: Future[Seq[ComplaintOrganization]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 
-  def getItemClassification(ComplaintId: String, OrganizationId: String): Future[Seq[ComplaintOrganization]] = {
+  def getComplaintOrganization(ComplaintId: String, OrganizationId: String): Future[Seq[ComplaintOrganization]] = {
     select.where(_.complaintId eqs ComplaintId). and(_.organizationId eqs OrganizationId).fetchEnumerator() run Iteratee.collect()
   }
 

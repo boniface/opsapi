@@ -44,11 +44,11 @@ object ComplaintLotRepository extends ComplaintLotRepository with RootConnector 
     select.where(_.complaintId eqs ComplaintId). and(_.lotId eqs LotId).one()
   }
 
-  def getAllItemClassifications: Future[Seq[ComplaintLot]] = {
+  def getAllComplaintLots: Future[Seq[ComplaintLot]] = {
     select.fetchEnumerator() run Iteratee.collect()
   }
 
-  def getItemClassification(ComplaintId: String, LotId: String): Future[Seq[ComplaintLot]] = {
+  def getComplaintLot(ComplaintId: String, LotId: String): Future[Seq[ComplaintLot]] = {
     select.where(_.complaintId eqs ComplaintId). and(_.lotId eqs LotId).fetchEnumerator() run Iteratee.collect()
   }
 
