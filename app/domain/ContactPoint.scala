@@ -3,14 +3,16 @@ package domain
 import play.api.libs.json.Json
 
 /**
-  * Created by 212026992 on 2016/11/17.
+  * Created by 212026992 on 2016/11/18.
   */
 case class ContactPoint(name: String,
-                        email: String,
-                        telephone: String,
-                        faxNumber: String,
-                        url: String )
+                   email: String,
+                   telephone: String,
+                   faxNumber: String,
+                   url: String ) {
+
+}
 
 object ContactPoint{
-    implicit val contactPointFmt = Json.format[ContactPoint]
+   implicit val addressFmt = Json.format[ContactPoint]
 }
