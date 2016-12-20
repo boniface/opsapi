@@ -1,8 +1,6 @@
-package domain
+package domain.Period
 
 import play.api.libs.json.Json
-
-import scala.util.Random
 
 /**
   * Created by sanXion on 2016/11/24.

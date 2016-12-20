@@ -1,4 +1,5 @@
-package domain
+package domain.Value
+
 import play.api.libs.json.Json
 /**
   * Created by sanXion on 2016/11/24.

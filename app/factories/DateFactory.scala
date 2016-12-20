@@ -1,12 +1,12 @@
 package factories
 
-import domain.Date
+import domain.Date.Date
 
 /**
   * Created by sanXion on 2016/12/11.
   */
 class DateFactory {
-  def createDate(date : Option[Date]):Date={
+  def createDate(date : String):Date={
     Date(date = date)
   }
 }

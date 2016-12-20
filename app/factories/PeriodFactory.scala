@@ -1,6 +1,6 @@
 package factories
 
-import domain.Period
+import domain.Period.Period
 
 /**
   * Created by sanXion on 2016/12/11.
